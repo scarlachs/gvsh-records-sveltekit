@@ -6,10 +6,18 @@
 </script>
 
 <nav class="flex items-center" aria-label="Social Navigation">
-	<a href={LINK_GITHUB} class={buttonVariants({ variant: "ghost", size: "icon" })}>
+	<a
+		href={LINK_GITHUB}
+		class={buttonVariants({ variant: "ghost", size: "icon" })}
+		aria-label="Pascal on GitHub"
+	>
 		<Github class="h-auto w-5" />
 	</a>
-	<a href={LINK_LINKEDIN} class={buttonVariants({ variant: "ghost", size: "icon" })}>
+	<a
+		href={LINK_LINKEDIN}
+		class={buttonVariants({ variant: "ghost", size: "icon" })}
+		aria-label="Pascal on LinkedIn"
+	>
 		<LinkedIn class="h-auto w-5" />
 	</a>
 </nav>
