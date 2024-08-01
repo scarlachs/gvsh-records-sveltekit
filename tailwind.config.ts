@@ -10,6 +10,7 @@ const config: Config = {
 			sans: ["Montserrat Variable", ...fontFamily.sans]
 		},
 		colors: ({ colors }) => ({
+			current: "currentColor",
 			primary: {
 				50: "#fae3e0",
 				100: "#f6d0ca",
