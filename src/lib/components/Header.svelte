@@ -20,9 +20,7 @@
 
 		<div class="flex h-9 items-center space-x-2">
 			<MainNav />
-
-			<Separator orientation="vertical" />
-
+			<Separator orientation="vertical" class="max-sm:hidden" />
 			<div class="flex items-center">
 				<SocialNav />
 				<ModeToggle />
