@@ -7,7 +7,7 @@
 	import PageTransition from "$lib/transition.svelte";
 	import { ModeWatcher } from "mode-watcher";
 	import Header from "$lib/components/Header.svelte";
-	import Footer from "~/lib/components/Footer.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 
 	let viewTransitionAPI = false;
 
