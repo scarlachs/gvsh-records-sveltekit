@@ -91,13 +91,13 @@
 			{/if}
 		</ButtonGroup>
 	</div>
-	<div class={index % 2 === 1 ? "order-1" : undefined}>
+	<div class:order-1={index % 2 === 1}>
 		<enhanced:img
 			class="h-auto w-full"
 			src={project.image.file}
 			alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
-			sizes={"(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"}
-			loading={index === 0 ? undefined : "lazy"}
+			sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
+			loading="lazy"
 		/>
 	</div>
 </div>
