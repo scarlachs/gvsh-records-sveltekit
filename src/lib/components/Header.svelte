@@ -1,8 +1,8 @@
 <script>
-	import Pascal from "$lib/components/icons/pascal.svg.svelte";
-	import ModeToggle from "$lib/components/ModeToggle.svelte";
-	import SocialNav from "$lib/components/SocialNav.svelte";
-	import Separator from "$lib/components/ui/separator/separator.svelte";
+	import PascalLogo from "./logos/PascalLogo.svg.svelte";
+	import ModeToggle from "./ModeToggle.svelte";
+	import SocialNav from "./SocialNav.svelte";
+	import Separator from "./ui/separator/separator.svelte";
 	import MainNav from "./MainNav.svelte";
 </script>
 
@@ -11,10 +11,10 @@
 >
 	<div class="container flex items-center justify-between py-2.5">
 		<a
-			class="h-9 rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 dark:focus-visible:ring-slate-300"
+			class="h-9 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
 			href="/"
 		>
-			<Pascal class="inline-flex h-full w-auto" />
+			<PascalLogo class="inline-flex h-full w-auto" />
 			<span class="sr-only">Pascal</span>
 		</a>
 

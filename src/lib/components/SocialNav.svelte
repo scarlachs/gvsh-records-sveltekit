@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { LINK_GITHUB, LINK_LINKEDIN } from "$lib/ts/constants";
-	import Github from "$lib/components/icons/github.svg.svelte";
-	import { buttonVariants } from "$lib/components/ui/button";
-	import LinkedIn from "$lib/components/icons/linkedin.svg.svelte";
+	import { buttonVariants } from "./ui/button";
+	import { GithubLogo, LinkedinLogo } from "svelte-radix";
 </script>
 
 <nav class="flex items-center" aria-label="Social Navigation">
@@ -11,13 +10,13 @@
 		class={buttonVariants({ variant: "ghost", size: "icon" })}
 		aria-label="Pascal on GitHub"
 	>
-		<Github class="h-auto w-5" />
+		<GithubLogo class="h-auto w-5" />
 	</a>
 	<a
 		href={LINK_LINKEDIN}
 		class={buttonVariants({ variant: "ghost", size: "icon" })}
 		aria-label="Pascal on LinkedIn"
 	>
-		<LinkedIn class="h-auto w-5" />
+		<LinkedinLogo class="h-auto w-5" />
 	</a>
 </nav>

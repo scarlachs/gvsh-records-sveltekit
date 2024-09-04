@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { buttonVariants } from "./ui/button";
 
-	const items = [
+	const items: { label: string; anchor: string }[] = [
 		{
 			label: "Projekte",
 			anchor: "projects"
