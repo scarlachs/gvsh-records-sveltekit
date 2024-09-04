@@ -1,7 +1,14 @@
-<script>
-	import Button from "$lib/components/ui/button/button.svelte";
+<script lang="ts">
+	import Contact from "$lib/components/Contact.svelte";
+	import Intro from "$lib/components/Intro.svelte";
+	import About from "~/lib/components/About.svelte";
+	import Projects from "~/lib/components/Projects.svelte";
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<Button>Click me</Button>
+<Intro />
+
+<Projects />
+
+<About />
+
+<Contact />
