@@ -1,3 +1,8 @@
-export const LINK_LINKEDIN = "https://www.linkedin.com/in/pascalschaar/";
-export const LINK_CAL_COM = "https://cal.com/pascalschaar/coffee";
-export const LINK_GITHUB = "https://github.com/scarlachs";
+const links = {
+	linkedin: "https://www.linkedin.com/in/pascalschaar/",
+	calcom: "https://cal.com/pascalschaar/coffee",
+	github: "https://github.com/scarlachs",
+	whatsapp: "https://wa.me/message/BY4II5TIXXW6N1"
+};
+
+export { links };
