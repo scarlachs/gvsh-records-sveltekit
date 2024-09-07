@@ -94,34 +94,12 @@
 		</ButtonGroup>
 	</div>
 	<div class:order-1={index % 2 === 1}>
-		{#if index === 0}
-			<enhanced:img
-				class="h-auto w-full"
-				src="$lib/images/projects/website-portfolio-photography.png?w=343;686;1296&format=avif;webp;jpeg"
-				alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
-				sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
-			/>{:else if index === 1}
-			<enhanced:img
-				class="h-auto w-full"
-				src="$lib/images/projects/website-portfolio-developer.png?w=343;686;1296&format=avif;webp;jpeg"
-				alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
-				sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
-				loading="lazy"
-			/>{:else if index === 2}
-			<enhanced:img
-				class="h-auto w-full"
-				src="$lib/images/projects/website-landingpage-personal-coach.png?w=343;686;1296&format=avif;webp;jpeg"
-				alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
-				sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
-				loading="lazy"
-			/>{:else if index === 3}
-			<enhanced:img
-				class="h-auto w-full"
-				src="$lib/images/projects/website-landingpage-media-designer.png?w=343;686;1296&format=avif;webp;jpeg"
-				alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
-				sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
-				loading="lazy"
-			/>
-		{/if}
+		<enhanced:img
+			class="h-auto w-full"
+			src={project.image.file}
+			alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
+			sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
+			loading={index === 0 ? undefined : "lazy"}
+		/>
 	</div>
 </div>

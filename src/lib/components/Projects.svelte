@@ -2,9 +2,6 @@
 	import type { Project as TProject } from "../ts/types";
 	import Project from "./Project.svelte";
 	import PortfolioPhotography from "$lib/images/projects/website-portfolio-photography.png?enhanced";
-	// import PortfolioPhotography343 from "$lib/images/projects/website-portfolio-photography.png?w=343";
-	// import PortfolioPhotography686 from "$lib/images/projects/website-portfolio-photography.png?w=686";
-	// import PortfolioPhotography1296 from "$lib/images/projects/website-portfolio-photography.png?w=1296";
 	import PortfolioDeveloper from "$lib/images/projects/website-portfolio-developer.png?enhanced";
 	import LandingpagePersonalCoach from "$lib/images/projects/website-landingpage-personal-coach.png?enhanced";
 	import LandingpageMediaDesigner from "$lib/images/projects/website-landingpage-media-designer.png?enhanced";
