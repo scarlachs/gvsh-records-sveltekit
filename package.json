@@ -14,7 +14,6 @@
 	},
 	"devDependencies": {
 		"@fontsource-variable/montserrat": "^5.0.20",
-		"@sveltejs/adapter-auto": "^3.2.4",
 		"@sveltejs/adapter-vercel": "^5.4.3",
 		"@sveltejs/enhanced-img": "^0.3.4",
 		"@sveltejs/kit": "^2.5.26",
