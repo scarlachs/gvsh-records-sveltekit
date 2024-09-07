@@ -1,14 +1,14 @@
-<script lang="ts">
+<script>
 	import Contact from "$lib/components/Contact.svelte";
 	import Intro from "$lib/components/Intro.svelte";
-	import About from "~/lib/components/About.svelte";
-	import Projects from "~/lib/components/Projects.svelte";
+	import About from "$lib/components/About.svelte";
+	import Projects from "$lib/components/Projects.svelte";
 </script>
 
 <Intro />
 
-<Projects />
+<Projects id="projects" />
 
-<About />
+<About id="about" />
 
-<Contact />
+<Contact id="contact" />

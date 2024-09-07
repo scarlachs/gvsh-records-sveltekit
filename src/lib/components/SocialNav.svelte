@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import { links } from "$lib/ts/constants";
 	import { buttonVariants } from "./ui/button";
 	import { GithubLogo, LinkedinLogo } from "svelte-radix";

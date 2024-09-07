@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
 
-export function cn(...inputs: ClassValue[]) {
+function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
@@ -14,7 +14,7 @@ type FlyAndScaleParams = {
 	duration?: number;
 };
 
-export const flyAndScale = (
+const flyAndScale = (
 	node: Element,
 	params: FlyAndScaleParams = { y: -8, x: 0, start: 0.95, duration: 150 }
 ): TransitionConfig => {
@@ -58,3 +58,5 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+export { cn, flyAndScale };

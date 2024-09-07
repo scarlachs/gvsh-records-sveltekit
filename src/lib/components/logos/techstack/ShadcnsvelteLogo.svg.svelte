@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
-	import { cn } from "$lib/ts/utils";
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>

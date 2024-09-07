@@ -1,13 +1,17 @@
-<script>
+<script lang="ts">
 	import { links } from "$lib/ts/constants";
 	import { Calendar, ChatBubble } from "svelte-radix";
 	import ButtonGroup from "./ButtonGroup.svelte";
 	import Headline2 from "./typography/Headline2.svelte";
 	import { buttonVariants } from "./ui/button";
 	import Section from "./Section.svelte";
+
+	let id: string;
+
+	export { id };
 </script>
 
-<Section id="contact">
+<Section {id}>
 	<div class="mx-auto max-w-2xl md:text-center">
 		<Headline2>Zeit für einen Kaffee?</Headline2>
 		<p class="mt-2.5 text-balance">

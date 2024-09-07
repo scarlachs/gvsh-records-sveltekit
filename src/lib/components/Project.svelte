@@ -20,8 +20,10 @@
 	import { buttonVariants } from "./ui/button";
 	import { ExternalLink, GithubLogo } from "svelte-radix";
 
-	export let project: Project;
-	export let index: number;
+	let project: Project;
+	let index: number;
+
+	export { project, index };
 </script>
 
 <div class="mb-16 grid gap-5 last:mb-0 md:mb-24 md:grid-cols-2 md:items-center md:gap-10">

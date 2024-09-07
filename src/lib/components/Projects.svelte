@@ -54,9 +54,13 @@
 			}
 		}
 	];
+
+	let id: string;
+
+	export { id };
 </script>
 
-<Section id="projects">
+<Section {id}>
 	{#each projects as project, index}
 		<Project {project} {index} />
 	{/each}

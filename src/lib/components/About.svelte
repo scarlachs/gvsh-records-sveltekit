@@ -28,9 +28,13 @@
 			link: "https://www.schwartau-professional.de/beratung-service/individuelle-etiketten-fuer-portionsglaeser-konfigurieren#c51"
 		}
 	];
+
+	let id: string;
+
+	export { id };
 </script>
 
-<Section id="about">
+<Section {id}>
 	<Accordion.Root class="mx-auto w-full max-w-2xl">
 		<Accordion.Item value="item-1">
 			<Accordion.Trigger>Wie es anfing</Accordion.Trigger>

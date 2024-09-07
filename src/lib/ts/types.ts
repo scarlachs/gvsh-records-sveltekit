@@ -31,4 +31,6 @@ type ProjectImage = {
 	alt?: string;
 };
 
-export type Project = { text: ProjectText; image: ProjectImage };
+type Project = { text: ProjectText; image: ProjectImage };
+
+export type { Project };
