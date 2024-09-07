@@ -9,10 +9,9 @@
 	width="512"
 	height="408"
 	viewBox="0 0 512 408"
-	aria-labelledby="title"
+	aria-label="Bootstrap"
 	{...$$restProps}
 >
-	<title id="title">Bootstrap</title>
 	<defs>
 		<linearGradient
 			id="bs-logo-a"

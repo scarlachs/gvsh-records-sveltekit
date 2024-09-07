@@ -11,11 +11,10 @@
 	height="256"
 	viewBox="0 0 256 256"
 	fill="none"
-	aria-labelledby="title"
+	aria-label="shadcn/ui"
 	{...$$restProps}
 	class={cn($$restProps.class, "text-zinc-950 dark:text-zinc-50")}
 >
-	<title id="title">shadcn/ui</title>
 	<line
 		x1="208"
 		y1="128"

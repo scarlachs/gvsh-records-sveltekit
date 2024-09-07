@@ -11,10 +11,9 @@
 	height="256"
 	viewBox="0 0 256 256"
 	fill="none"
-	aria-labelledby="title"
+	aria-label="shadcn-svelte"
 	{...$$restProps}
 >
-	<title id="title">shadcn-svelte</title>
 	<rect width="256" height="256" fill="none"></rect>
 	<line
 		x1="208"

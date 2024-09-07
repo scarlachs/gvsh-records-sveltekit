@@ -9,10 +9,9 @@
 	width="600"
 	height="600"
 	viewBox="0 0 600 600"
-	aria-labelledby="title"
+	aria-label="wwbpack"
 	{...$$restProps}
 >
-	<title id="title">webpack</title>
 	<path fill="#FFF" d="M300 .1L565 150v299.9L300 599.8 35 449.9V150z" />
 	<path
 		fill="#8ED6FB"
