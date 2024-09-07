@@ -21,7 +21,7 @@
 		</div>
 		<div class="md:w-6/12 xl:w-5/12">
 			<enhanced:img
-				src="$lib/images/Frontend-Developer-Pascal-Schaar.jpg?w=343;686;1152"
+				src="~/images/Frontend-Developer-Pascal-Schaar.jpg?w=343;686;1152"
 				alt="Ein Portrait von Pascal Schaar"
 				class="img-mask h-auto w-full"
 				sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 506px, 556px"
@@ -32,7 +32,7 @@
 
 <style>
 	.img-mask {
-		mask-image: url($lib/images/blob.svg);
+		mask-image: url(~/images/blob.svg);
 		mask-repeat: no-repeat;
 		mask-size: 100% 100%;
 		mask-position: -1.5rem center;
