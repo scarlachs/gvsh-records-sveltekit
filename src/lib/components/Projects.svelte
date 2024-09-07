@@ -12,7 +12,7 @@
 			text: {
 				title: "Portfolio: Fotografie",
 				copy: "Eine Website, die meine Leidenschaft als Fotograf übersichtlich darstellt. Einfache Nutzerführung und ein exklusiver Model-Login.",
-				website: "https://pascal.photos",
+				website: "https://www.pascalschaar.com",
 				usedStack: ["sveltekit", "typescript", "tailwindcss"]
 			},
 			image: {
@@ -23,7 +23,7 @@
 			text: {
 				title: "Portfolio: Entwicklung",
 				copy: "Willkommen in meiner Welt des Codes! Diese Website betrachtest du bereits. Wahlweise im Light- oder Dark-Mode.",
-				website: "https://schaar.dev",
+				website: "https://www.schaar.dev",
 				github: "https://github.com/scarlachs/dev-portfolio-sveltekit",
 				usedStack: ["sveltekit", "typescript", "tailwindcss", "shadcn-svelte"]
 			},
