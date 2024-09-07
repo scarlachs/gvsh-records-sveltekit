@@ -10,9 +10,10 @@
 	height="33"
 	viewBox="0 0 54 33"
 	fill="none"
-	aria-label="Tailwind CSS"
+	aria-labelledby="tailwind"
 	{...$$restProps}
 >
+	<title id="tailwind">Tailwind CSS</title>
 	<g clip-path="url(#prefix__clip0)">
 		<path
 			fill="#38bdf8"

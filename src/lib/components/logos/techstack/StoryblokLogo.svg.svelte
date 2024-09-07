@@ -9,9 +9,10 @@
 	width="45"
 	height="53"
 	viewBox="0 0 45 53"
-	aria-label="Storyblok"
+	aria-labelledby="storyblok"
 	{...$$restProps}
 >
+	<title id="storyblok">Storyblok</title>
 	<g id="storyblok-logo-kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 		<g
 			id="storyblok-partner-logo"

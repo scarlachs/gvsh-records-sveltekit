@@ -10,9 +10,10 @@
 	height="256"
 	viewBox="0 0 256 256"
 	fill="none"
-	aria-label="TypeScript"
+	aria-labelledby="typescript"
 	{...$$restProps}
 >
+	<title id="typescript">TypeScript</title>
 	<rect fill="#3178c6" width="256" height="256" rx="20" />
 	<path
 		clip-rule="evenodd"

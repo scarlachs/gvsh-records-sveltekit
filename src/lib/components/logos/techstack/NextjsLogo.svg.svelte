@@ -12,10 +12,11 @@
 	height="180"
 	viewBox="0 0 180 180"
 	fill="none"
-	aria-label="Next.js"
+	aria-labelledby="nextjs"
 	{...$$restProps}
 	class={cn($$restProps.class, "dark:hidden")}
 >
+	<title id="nextjs">Next.js</title>
 	<mask
 		id="mask0_408_134"
 		style="mask-type: alpha;"
