@@ -4,9 +4,9 @@
 	import Section from "./Section.svelte";
 </script>
 
-<Section class="pt-16">
+<Section class="pt-12 md:pt-16">
 	<div class="relative md:flex md:items-center md:justify-center md:gap-10">
-		<div class="md:w-6/12 xl:w-5/12">
+		<div class="max-md:mb-8 md:w-6/12 xl:w-5/12">
 			<h1 class="mb-5 text-4xl font-bold max-md:pe-24 lg:text-5xl">Frontend-Entwickler</h1>
 			<p class="mb-10 text-lg sm:max-lg:w-10/12 xl:w-11/12">
 				Moin! Und willkommen in meiner Welt des Codes! Ich bin Frontend-Entwickler und zeige
@@ -19,7 +19,7 @@
 				<a href="/#about" class={buttonVariants({ variant: "secondary" })}>Über mich</a>
 			</ButtonGroup>
 		</div>
-		<div class="md:w-6/12 xl:w-5/12">
+		<div class="w-9/12 md:w-6/12 xl:w-5/12">
 			<enhanced:img
 				src="~/images/Frontend-Developer-Pascal-Schaar.jpg?w=343;686;1152"
 				alt="Ein Portrait von Pascal Schaar"
@@ -30,11 +30,11 @@
 	</div>
 </Section>
 
-<style>
+<style lang="postcss">
 	.img-mask {
 		mask-image: url(~/images/blob.svg);
 		mask-repeat: no-repeat;
 		mask-size: 100% 100%;
-		mask-position: -1.5rem center;
+		@apply [mask-position:-1rem_center] md:[mask-position:-1.5rem_center];
 	}
 </style>
