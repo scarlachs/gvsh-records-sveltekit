@@ -10,13 +10,13 @@
 		class={buttonVariants({ variant: "ghost", size: "icon" })}
 		aria-label="Pascal on GitHub"
 	>
-		<GithubLogo class="h-auto w-5" />
+		<GithubLogo class="size-5" />
 	</a>
 	<a
 		href={links.linkedin}
 		class={buttonVariants({ variant: "ghost", size: "icon" })}
 		aria-label="Pascal on LinkedIn"
 	>
-		<LinkedinLogo class="h-auto w-5" />
+		<LinkedinLogo class="size-5" />
 	</a>
 </nav>
