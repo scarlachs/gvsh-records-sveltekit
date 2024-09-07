@@ -8,6 +8,10 @@
 	import { ModeWatcher } from "mode-watcher";
 	import Header from "$lib/components/Header.svelte";
 	import Footer from "$lib/components/Footer.svelte";
+	import { dev } from "$app/environment";
+	import { inject } from "@vercel/analytics";
+
+	inject({ mode: dev ? "development" : "production" });
 
 	let viewTransitionAPI = false;
 
