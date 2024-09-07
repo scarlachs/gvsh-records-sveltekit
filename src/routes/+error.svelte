@@ -1,8 +1,11 @@
 <script lang="ts">
 	import Button from "$lib/components/ui/button/button.svelte";
 	import { page } from "$app/stores";
-	import { error } from "@sveltejs/kit";
 </script>
+
+<svelte:head>
+	<title>{$page.status} | Pascal Schaar</title>
+</svelte:head>
 
 <section class="container flex min-h-96 items-center">
 	<div class="pt-16">
