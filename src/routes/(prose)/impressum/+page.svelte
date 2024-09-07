@@ -1,17 +1,3 @@
-<script>
-	const title = "Impressum | Pascal Schaar";
-</script>
-
-<svelte:head>
-	<meta name="robots" content="noindex, nofollow" />
-	<meta name="format-detection" content="telephone=no" />
-
-	<meta name="title" content={title} />
-	<title>{title}</title>
-
-	<meta property="og:title" content={title} />
-</svelte:head>
-
 <h1>Impressum</h1>
 
 <p>

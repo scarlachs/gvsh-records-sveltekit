@@ -4,7 +4,13 @@
 </script>
 
 <svelte:head>
+	<meta name="title" content="{$page.status} | Pascal Schaar" />
+
 	<title>{$page.status} | Pascal Schaar</title>
+
+	<meta property="og:title" content="{$page.status} | Pascal Schaar" />
+
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <section class="container flex min-h-96 items-center">

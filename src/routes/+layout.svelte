@@ -37,20 +37,25 @@
 </script>
 
 <svelte:head>
-	<meta name="title" content="{$page.data.head.title} | Pascal Schaar" />
-	<meta name="description" content={$page.data.head.description} />
-	<title>{$page.data.head.title} | Pascal Schaar</title>
+	{#if $page.data.title}
+		<meta name="title" content="{$page.data.title} | Pascal Schaar" />
+		<title>{$page.data.title} | Pascal Schaar</title>
+		<meta property="og:title" content="{$page.data.title} | Pascal Schaar" />
+	{/if}
 
-	<meta property="og:title" content="{$page.data.head.title} | Pascal Schaar" />
-	<meta property="og:description" content={$page.data.head.description} />
+	{#if $page.data.description}
+		<meta name="description" content={$page.data.description} />
+		<meta property="og:description" content={$page.data.description} />
+	{/if}
+
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={$page.url.href} />
 	<meta property="og:locale" content="de_DE" />
 
-	<meta name="twitter:card" content="summary_large_image" />
-
 	<meta name="url" content={$page.url.href} />
 	<link rel="canonical" href={$page.url.href} />
+
+	<meta name="generator" content="SvelteKit v2.5.26" />
 </svelte:head>
 
 <ViewTransition />

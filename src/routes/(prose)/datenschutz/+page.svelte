@@ -1,18 +1,6 @@
 <script>
 	import { LockClosed } from "svelte-radix";
-
-	const title = "Datenschutz";
 </script>
-
-<svelte:head>
-	<meta name="robots" content="noindex, nofollow" />
-	<meta name="format-detection" content="telephone=no" />
-
-	<meta name="title" content={title} />
-	<title>{title}</title>
-
-	<meta property="og:title" content={title} />
-</svelte:head>
 
 <h1>Datenschutz&shy;erklärung</h1>
 <h2>Inhaltsverzeichnis</h2>
