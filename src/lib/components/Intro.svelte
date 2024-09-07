@@ -21,10 +21,10 @@
 		</div>
 		<div class="w-9/12 md:w-6/12 xl:w-5/12">
 			<enhanced:img
-				src="~/images/Frontend-Developer-Pascal-Schaar.jpg?w=343;686;1152"
+				src="~/images/Frontend-Developer-Pascal-Schaar.jpg?w=257;556;1152"
 				alt="Ein Portrait von Pascal Schaar"
 				class="img-mask h-auto w-full"
-				sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 506px, 556px"
+				sizes="(max-width: 639.98px) calc((100vw - 2rem) * 0.75), (max-width: 767.98px) 432px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 506px, 556px"
 			/>
 		</div>
 	</div>
