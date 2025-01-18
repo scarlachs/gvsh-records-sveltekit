@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `storyblok-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -10,9 +18,9 @@
 	height="53"
 	viewBox="0 0 45 53"
 	aria-labelledby="storyblok"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="storyblok">Storyblok</title>
+	<title {id}>Storyblok</title>
 	<g id="storyblok-logo-kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 		<g
 			id="storyblok-partner-logo"

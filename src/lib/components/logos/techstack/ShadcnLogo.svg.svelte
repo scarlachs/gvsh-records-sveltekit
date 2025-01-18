@@ -1,6 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
-	import { cn } from "$lib/ts/utils";
+	import { cn, randomAlphaNumeric } from "$lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `shadcn-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -12,10 +19,10 @@
 	viewBox="0 0 256 256"
 	fill="none"
 	aria-labelledby="shadcn"
-	{...$$restProps}
-	class={cn($$restProps.class, "text-zinc-950 dark:text-zinc-50")}
+	{...rest}
+	class={cn(rest.class, "text-zinc-950 dark:text-zinc-50")}
 >
-	<title id="shadcn">shadcn/ui</title>
+	<title {id}>shadcn/ui</title>
 	<line
 		x1="208"
 		y1="128"

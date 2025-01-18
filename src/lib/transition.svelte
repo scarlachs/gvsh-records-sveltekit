@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
+	import type { TransitionProps } from "$lib/ts/types";
 
-	let url: string;
-
-	export { url };
+	let { url, children }: TransitionProps = $props();
 </script>
 
 {#key url}
 	<div class="transition" in:fade>
-		<slot />
+		{@render children?.()}
 	</div>
 {/key}
 

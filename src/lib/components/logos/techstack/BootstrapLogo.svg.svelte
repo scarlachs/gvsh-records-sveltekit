@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `bootstrap-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -10,9 +18,9 @@
 	height="408"
 	viewBox="0 0 512 408"
 	aria-labelledby="bootstrap"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="bootstrap">Bootstrap</title>
+	<title {id}>Bootstrap</title>
 	<defs>
 		<linearGradient
 			id="bs-logo-a"
