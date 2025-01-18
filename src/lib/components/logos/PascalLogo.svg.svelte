@@ -1,6 +1,12 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
 
+	type Props = {
+		[key: string]: any;
+	};
+
+	let { ...rest }: Props = $props();
+
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
 
@@ -11,7 +17,7 @@
 	fill="currentColor"
 	xmlns="http://www.w3.org/2000/svg"
 	aria-label="Pascal"
-	{...$$restProps}
+	{...rest}
 >
 	<path
 		d="M76.1466 2.40065L74.9139 0C64.9121 5.13578 48.8196 9.93979 36.6518 11.426L36.9782 14.1045C49.4211 12.5832 65.8939 7.66052 76.1439 2.40065H76.1466Z"

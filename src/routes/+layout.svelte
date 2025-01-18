@@ -10,10 +10,13 @@
 	import Footer from "$lib/components/Footer.svelte";
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
+	import type { ChildrenProps } from "$lib/ts/types";
+
+	let { children }: ChildrenProps = $props();
 
 	inject({ mode: dev ? "development" : "production" });
 
-	let viewTransitionAPI = false;
+	let viewTransitionAPI = $state(false);
 
 	onMount(() => {
 		// @ts-ignore
@@ -71,10 +74,10 @@
 <main>
 	{#if !viewTransitionAPI}
 		<PageTransition url={$page.url.pathname}>
-			<slot />
+			{@render children?.()}
 		</PageTransition>
 	{:else}
-		<slot />
+		{@render children?.()}
 	{/if}
 </main>
 

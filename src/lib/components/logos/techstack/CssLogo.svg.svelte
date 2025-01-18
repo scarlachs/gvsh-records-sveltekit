@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `css-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -10,9 +18,9 @@
 	height="512"
 	viewBox="0 0 512 512"
 	aria-labelledby="css"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="css">CSS3</title>
+	<title {id}>CSS3</title>
 	<path fill="#264de4" d="M71.357 460.819L30.272 0h451.456l-41.129 460.746L255.724 512z" />
 	<path fill="#2965f1" d="M405.388 431.408l35.148-393.73H256v435.146z" />
 	<path

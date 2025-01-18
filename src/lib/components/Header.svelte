@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import PascalLogo from "./logos/PascalLogo.svg.svelte";
 	import ModeToggle from "./ModeToggle.svelte";
 	import SocialNav from "./SocialNav.svelte";

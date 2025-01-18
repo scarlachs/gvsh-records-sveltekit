@@ -11,14 +11,29 @@
 			"permanent": true
 		},
 		{
+			"source": "/whatsapp",
+			"destination": "https://wa.me/message/BY4II5TIXXW6N1",
+			"permanent": true
+		},
+		{
 			"source": "/photos",
 			"destination": "https://pascal.photos",
+			"permanent": true
+		},
+		{
+			"source": "/coffee",
+			"destination": "https://cal.com/pascalschaar/coffee",
 			"permanent": true
 		},
 		{
 			"source": "/trustpilot",
 			"destination": "https://de.trustpilot.com/review/schaar.dev",
 			"permanent": true
-		}
+		},
+        {
+            "source": "/google",
+            "destination": "https://g.page/r/CROuaIW3df7hEBM/review",
+            "permanent": true
+        }
 	]
 }

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { cn } from "$lib/ts/utils";
+	import type { ListItem } from "$lib/ts/types";
 	import SocialNav from "./SocialNav.svelte";
 	import { buttonVariants } from "./ui/button";
 	import Separator from "./ui/separator/separator.svelte";
 
-	const items: { label: string; link: string }[] = [
+	const items: ListItem[] = [
 		{
 			label: "Impressum",
 			link: "/impressum"

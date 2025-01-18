@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import { links } from "$lib/ts/constants";
+	import GithubBrands from "svelte-awesome-icons/GithubBrands.svelte";
+	import LinkedinBrands from "svelte-awesome-icons/LinkedinBrands.svelte";
 	import { buttonVariants } from "./ui/button";
-	import { GithubLogo, LinkedinLogo } from "svelte-radix";
 </script>
 
 <nav class="flex items-center" aria-label="Social Navigation">
@@ -10,13 +11,13 @@
 		class={buttonVariants({ variant: "ghost", size: "icon" })}
 		aria-label="Pascal on GitHub"
 	>
-		<GithubLogo class="size-5" />
+		<GithubBrands />
 	</a>
 	<a
 		href={links.linkedin}
 		class={buttonVariants({ variant: "ghost", size: "icon" })}
 		aria-label="Pascal on LinkedIn"
 	>
-		<LinkedinLogo class="size-5" />
+		<LinkedinBrands />
 	</a>
 </nav>

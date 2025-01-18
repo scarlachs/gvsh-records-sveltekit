@@ -1,8 +1,9 @@
 <script lang="ts">
 	import * as Accordion from "$lib/components/ui/accordion";
+	import type { IdProps, ListItem } from "$lib/ts/types";
 	import Section from "./Section.svelte";
 
-	const wendwebProjects: { label: string; link: string }[] = [
+	const wendwebProjects: ListItem[] = [
 		{
 			label: "NETFOX AG",
 			link: "https://www.netfox.de"
@@ -29,13 +30,11 @@
 		}
 	];
 
-	let id: string;
-
-	export { id };
+	let { id }: IdProps = $props();
 </script>
 
 <Section {id}>
-	<Accordion.Root class="mx-auto w-full max-w-2xl">
+	<Accordion.Root type="single" class="mx-auto w-full max-w-2xl">
 		<Accordion.Item value="item-1">
 			<Accordion.Trigger>Wie es anfing</Accordion.Trigger>
 			<Accordion.Content>
