@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `typescript-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -11,9 +19,9 @@
 	viewBox="0 0 256 256"
 	fill="none"
 	aria-labelledby="typescript"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="typescript">TypeScript</title>
+	<title {id}>TypeScript</title>
 	<rect fill="#3178c6" width="256" height="256" rx="20" />
 	<path
 		clip-rule="evenodd"

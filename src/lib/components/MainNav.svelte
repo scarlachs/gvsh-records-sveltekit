@@ -1,24 +1,25 @@
 <script lang="ts">
+	import type { ListItem } from "$lib/ts/types";
 	import { buttonVariants } from "./ui/button";
 
-	const items: { label: string; anchor: string }[] = [
+	const items: ListItem[] = [
 		{
 			label: "Projekte",
-			anchor: "projects"
+			link: "projects"
 		},
 		{
 			label: "Über mich",
-			anchor: "about"
+			link: "about"
 		},
 		{
 			label: "Kontakt",
-			anchor: "contact"
+			link: "contact"
 		}
 	];
 </script>
 
 <nav class="flex items-center max-sm:hidden" aria-label="Main Navigation">
 	{#each items as item}
-		<a href="/#{item.anchor}" class={buttonVariants({ variant: "ghost" })}>{item.label}</a>
+		<a href="/#{item.link}" class={buttonVariants({ variant: "ghost" })}>{item.label}</a>
 	{/each}
 </nav>

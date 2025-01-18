@@ -1,6 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
-	import { cn } from "$lib/ts/utils";
+	import { cn, randomAlphaNumeric } from "$lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `nextjs-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -13,10 +20,10 @@
 	viewBox="0 0 180 180"
 	fill="none"
 	aria-labelledby="nextjs"
-	{...$$restProps}
-	class={cn($$restProps.class, "dark:hidden")}
+	{...rest}
+	class={cn(rest.class, "dark:hidden")}
 >
-	<title id="nextjs">Next.js</title>
+	<title {id}>Next.js</title>
 	<mask
 		id="mask0_408_134"
 		style="mask-type: alpha;"
@@ -69,8 +76,8 @@
 	viewBox="0 0 180 180"
 	fill="none"
 	aria-labelledby="title"
-	{...$$restProps}
-	class={cn($$restProps.class, "hidden dark:block")}
+	{...rest}
+	class={cn(rest.class, "hidden dark:block")}
 >
 	<title id="title">Next.js</title>
 	<mask

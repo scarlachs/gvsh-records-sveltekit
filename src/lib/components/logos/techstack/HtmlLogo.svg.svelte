@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `html-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -10,9 +18,9 @@
 	height="512"
 	viewBox="0 0 512 512"
 	aria-labelledby="html"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="html">HTML5</title>
+	<title {id}>HTML5</title>
 	<path fill="#E34F26" d="M71,460 L30,0 481,0 440,460 255,512" />
 	<path fill="#EF652A" d="M256,472 L405,431 440,37 256,37" />
 	<path

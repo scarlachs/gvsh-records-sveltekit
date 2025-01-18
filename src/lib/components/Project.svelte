@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Project } from "../ts/types";
+	import type { Project, ProjectProps } from "$lib/ts/types";
 	import ButtonGroup from "./ButtonGroup.svelte";
 	import AstroLogo from "./logos/techstack/AstroLogo.svelte";
 	import BootstrapLogo from "./logos/techstack/BootstrapLogo.svg.svelte";
@@ -18,12 +18,10 @@
 	import Typo3Logo from "./logos/techstack/Typo3Logo.svg.svelte";
 	import WebpackLogo from "./logos/techstack/WebpackLogo.svg.svelte";
 	import { buttonVariants } from "./ui/button";
-	import { ExternalLink, GithubLogo } from "svelte-radix";
+	import ExternalLink from "lucide-svelte/icons/external-link";
+	import GithubBrands from "svelte-awesome-icons/GithubBrands.svelte";
 
-	let project: Project;
-	let index: number;
-
-	export { project, index };
+	let { project, index }: ProjectProps = $props();
 </script>
 
 <div class="mb-16 grid gap-5 last:mb-0 md:mb-24 md:grid-cols-2 md:items-center md:gap-10">
@@ -79,7 +77,7 @@
 				rel="noopener"
 			>
 				Projekt ansehen
-				<ExternalLink class="ml-2 size-4" />
+				<ExternalLink />
 			</a>
 			{#if project.text.github}
 				<a
@@ -88,7 +86,7 @@
 					target="_blank"
 					class={buttonVariants({ variant: "secondary" })}
 					>Code ansehen
-					<GithubLogo class="ml-2 size-4" />
+					<GithubBrands />
 				</a>
 			{/if}
 		</ButtonGroup>

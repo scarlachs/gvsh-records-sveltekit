@@ -1,5 +1,5 @@
-<script>
-	import { LockClosed } from "svelte-radix";
+<script lang="ts">
+	import Lock from "lucide-svelte/icons/lock";
 </script>
 
 <h1>Datenschutz&shy;erklärung</h1>
@@ -367,7 +367,7 @@
 	>). Durch den Einsatz von TLS (Transport Layer Security), einem Verschlüsselungsprotokoll zur
 	sicheren Datenübertragung im Internet, können wir den Schutz vertraulicher Daten sicherstellen.<br
 	/>
-	Sie erkennen die Benutzung dieser Absicherung der Datenübertragung am kleinen Schlosssymbol <LockClosed
+	Sie erkennen die Benutzung dieser Absicherung der Datenübertragung am kleinen Schlosssymbol <Lock
 		className="inline-flex size-4"
 	/> links oben im Browser, links von der Internetadresse (z. B. beispielseite.de) und der Verwendung
 	des Schemas https (anstatt http) als Teil unserer Internetadresse.<br />

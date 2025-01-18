@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Project as TProject } from "../ts/types";
+	import type { IdProps, Project as TProject } from "$lib/ts/types";
 	import Project from "./Project.svelte";
 	import PortfolioPhotography from "$lib/images/projects/website-portfolio-photography.png?enhanced";
 	import PortfolioDeveloper from "$lib/images/projects/website-portfolio-developer.png?enhanced";
@@ -36,7 +36,7 @@
 				title: "Landingpage: Personal Trainer",
 				copy: "Ganzheitliches Training für ein positives Lebensgefühl. Im individuellen 1:1 Personal Coaching für Körper und Geist.",
 				website: "https://marcel.fit",
-				usedStack: ["nextjs", "react", "typescript", "tailwindcss", "shadcn"]
+				usedStack: ["nextjs", "typescript", "tailwindcss", "shadcn", "storyblok"]
 			},
 			image: {
 				file: LandingpagePersonalCoach
@@ -55,9 +55,7 @@
 		}
 	];
 
-	let id: string;
-
-	export { id };
+	let { id }: IdProps = $props();
 </script>
 
 <Section {id}>

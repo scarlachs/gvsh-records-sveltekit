@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { links } from "$lib/ts/constants";
-	import { Calendar, ChatBubble } from "svelte-radix";
-	import ButtonGroup from "./ButtonGroup.svelte";
-	import Headline2 from "./typography/Headline2.svelte";
-	import { buttonVariants } from "./ui/button";
 	import Section from "./Section.svelte";
+	import Headline2 from "./typography/Headline2.svelte";
+	import ButtonGroup from "./ButtonGroup.svelte";
+	import { links } from "$lib/ts/constants";
+	import { buttonVariants } from "./ui/button";
+	import CalendarDays from "lucide-svelte/icons/calendar-days";
+	import MessageSquareMore from "lucide-svelte/icons/message-square-more";
+	import type { IdProps } from "$lib/ts/types";
 
-	let id: string;
-
-	export { id };
+	let { id }: IdProps = $props();
 </script>
 
 <Section {id}>
@@ -20,10 +20,10 @@
 		</p>
 		<ButtonGroup class="mt-5 md:justify-center">
 			<a href={links.calcom} rel="noopener" class={buttonVariants({ variant: "default" })}
-				>Kaffee-Date vereinbaren<Calendar class="ml-2 size-4" /></a
+				><CalendarDays />Kaffee-Date vereinbaren</a
 			>
 			<a href={links.whatsapp} rel="noopener" class={buttonVariants({ variant: "secondary" })}
-				>Text-Chat starten<ChatBubble class="ml-2 size-4" /></a
+				><MessageSquareMore />Text-Chat starten</a
 			>
 		</ButtonGroup>
 	</div>

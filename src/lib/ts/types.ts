@@ -1,6 +1,7 @@
 import type { Picture } from "vite-imagetools";
+import type { Snippet } from "svelte";
 
-type stack =
+type Stack =
 	| "html"
 	| "css"
 	| "tailwindcss"
@@ -18,12 +19,27 @@ type stack =
 	| "typo3"
 	| "storyblok";
 
+type ChildrenProps = {
+	children?: Snippet;
+};
+
+type ClassProps = {
+	class?: string | undefined | null;
+};
+
+type ButtonProps = ClassProps & ChildrenProps;
+
+type ListItem = {
+	label: string;
+	link: string;
+};
+
 type ProjectText = {
 	title: string;
 	copy: string;
 	website: string;
 	github?: string;
-	usedStack: stack[];
+	usedStack: Stack[];
 };
 
 type ProjectImage = {
@@ -31,6 +47,37 @@ type ProjectImage = {
 	alt?: string;
 };
 
-type Project = { text: ProjectText; image: ProjectImage };
+type Project = {
+	text: ProjectText;
+	image: ProjectImage;
+};
 
-export type { Project };
+type ProjectProps = {
+	project: Project;
+	index: number;
+};
+
+type IdProps = {
+	id: string;
+};
+
+type SectionProps = {
+	id?: string | undefined;
+} & ClassProps &
+	ChildrenProps;
+
+type TransitionProps = {
+	url: string;
+} & ChildrenProps;
+
+export type {
+	ClassProps,
+	ChildrenProps,
+	ButtonProps,
+	ListItem,
+	Project,
+	ProjectProps,
+	IdProps,
+	SectionProps,
+	TransitionProps
+};

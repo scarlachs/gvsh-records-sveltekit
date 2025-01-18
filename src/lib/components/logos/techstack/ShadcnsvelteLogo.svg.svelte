@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `shadcn-svelte-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -11,9 +19,9 @@
 	viewBox="0 0 256 256"
 	fill="none"
 	aria-labelledby="shadcn-svelte"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="shadcn-svelte">shadcn-svelte</title>
+	<title {id}>shadcn-svelte</title>
 	<rect width="256" height="256" fill="none"></rect>
 	<line
 		x1="208"

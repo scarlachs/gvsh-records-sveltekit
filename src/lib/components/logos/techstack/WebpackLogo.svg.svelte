@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `webpack-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -10,9 +18,9 @@
 	height="600"
 	viewBox="0 0 600 600"
 	aria-labelledby="webpack"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="webpack">webpack</title>
+	<title {id}>webpack</title>
 	<path fill="#FFF" d="M300 .1L565 150v299.9L300 599.8 35 449.9V150z" />
 	<path
 		fill="#8ED6FB"

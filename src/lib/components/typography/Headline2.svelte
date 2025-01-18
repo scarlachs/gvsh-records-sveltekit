@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { cn } from "$lib/ts/utils";
 
-	let className: string | undefined | null = undefined;
+	type Props = {
+		class?: string | undefined | null;
+		children?: import("svelte").Snippet;
+	};
 
-	export { className as class };
+	let { class: className = undefined, children }: Props = $props();
 </script>
 
 <h1 class={cn("text-2xl font-bold md:text-3xl", className)}>
-	<slot />
+	{@render children?.()}
 </h1>

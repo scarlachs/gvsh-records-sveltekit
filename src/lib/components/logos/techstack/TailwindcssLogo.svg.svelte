@@ -1,5 +1,13 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import { randomAlphaNumeric } from "~/lib/ts/utils";
+
+	type Props = {
+		[key: string]: any;
+	};
+
+	const id = `tailwindcss-${randomAlphaNumeric()}`;
+	let { ...rest }: Props = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
@@ -11,9 +19,9 @@
 	viewBox="0 0 54 33"
 	fill="none"
 	aria-labelledby="tailwind"
-	{...$$restProps}
+	{...rest}
 >
-	<title id="tailwind">Tailwind CSS</title>
+	<title {id}>Tailwind CSS</title>
 	<g clip-path="url(#prefix__clip0)">
 		<path
 			fill="#38bdf8"
