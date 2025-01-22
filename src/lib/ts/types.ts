@@ -12,19 +12,19 @@ type Stack =
 	| "javascript"
 	| "typescript"
 	| "sveltekit"
-	| "webpack"
 	| "astro"
 	| "react"
 	| "nextjs"
 	| "typo3"
-	| "storyblok";
+	| "storyblok"
+	| "gsap";
 
 type ChildrenProps = {
 	children?: Snippet;
 };
 
 type ClassProps = {
-	class?: string | undefined | null;
+	class?: string | null;
 };
 
 type ButtonProps = ClassProps & ChildrenProps;
@@ -62,7 +62,7 @@ type IdProps = {
 };
 
 type SectionProps = {
-	id?: string | undefined;
+	id?: string;
 } & ClassProps &
 	ChildrenProps;
 
@@ -70,7 +70,22 @@ type TransitionProps = {
 	url: string;
 } & ChildrenProps;
 
+type TechstackProps = {
+	items: Stack[];
+} & IdProps;
+
+type TechstackLogoProps = {
+	item: Stack;
+	class?: string;
+} & LogoProps;
+
+type LogoProps = {
+	wordmark?: boolean;
+	[key: string]: any;
+};
+
 export type {
+	Stack,
 	ClassProps,
 	ChildrenProps,
 	ButtonProps,
@@ -79,5 +94,8 @@ export type {
 	ProjectProps,
 	IdProps,
 	SectionProps,
-	TransitionProps
+	TransitionProps,
+	TechstackProps,
+	TechstackLogoProps,
+	LogoProps
 };

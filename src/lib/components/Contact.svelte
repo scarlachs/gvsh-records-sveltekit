@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Section from "./Section.svelte";
-	import Headline2 from "./typography/Headline2.svelte";
-	import ButtonGroup from "./ButtonGroup.svelte";
+	import Section from "$lib/components/Section.svelte";
+	import Headline2 from "$lib/components/typography/Headline2.svelte";
+	import ButtonGroup from "$lib/components/ButtonGroup.svelte";
 	import { links } from "$lib/ts/constants";
-	import { buttonVariants } from "./ui/button";
+	import { buttonVariants } from "$lib/components/ui/button";
 	import CalendarDays from "lucide-svelte/icons/calendar-days";
 	import MessageSquareMore from "lucide-svelte/icons/message-square-more";
 	import type { IdProps } from "$lib/ts/types";

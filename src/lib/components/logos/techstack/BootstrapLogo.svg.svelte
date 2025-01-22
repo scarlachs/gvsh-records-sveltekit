@@ -1,24 +1,22 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
-	import { randomAlphaNumeric } from "~/lib/ts/utils";
-
-	type Props = {
-		[key: string]: any;
-	};
+	import { randomAlphaNumeric } from "$lib/ts/utils";
+	import type { LogoProps } from "$lib/ts/types";
 
 	const id = `bootstrap-${randomAlphaNumeric()}`;
-	let { ...rest }: Props = $props();
+	let { wordmark, ...restProps }: LogoProps = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
 
 <svg
-	xmlns="http://www.w3.org/2000/svg"
 	width="512"
 	height="408"
 	viewBox="0 0 512 408"
-	aria-labelledby="bootstrap"
-	{...rest}
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	aria-labelledby={id}
+	{...restProps}
 >
 	<title {id}>Bootstrap</title>
 	<defs>
@@ -41,7 +39,7 @@
 			y2="278.872"
 			gradientUnits="userSpaceOnUse"
 		>
-			<stop stop-color="#fff" />
+			<stop stop-color="white" />
 			<stop offset="1" stop-color="#f1e5fc" />
 		</linearGradient>
 		<filter
@@ -70,7 +68,7 @@
 	<path
 		fill="url(#bs-logo-b)"
 		filter="url(#bs-logo-c)"
-		stroke="#fff"
+		stroke="white"
 		d="M267.103 312.457c47.297 0 75.798-23.158 75.798-61.355 0-28.873-20.336-49.776-50.532-53.085v-1.203c22.185-3.609 39.594-24.211 39.594-47.219 0-32.783-25.882-54.138-65.322-54.138h-88.74v217h89.202zm-54.692-189.48h45.911c24.958 0 39.131 11.128 39.131 31.279 0 21.505-16.484 33.535-46.372 33.535h-38.67v-64.814zm0 161.961v-71.431h45.602c32.661 0 49.608 12.03 49.608 35.49 0 23.459-16.484 35.941-47.605 35.941h-47.605z"
 	/>
 </svg>

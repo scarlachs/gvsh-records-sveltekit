@@ -11,12 +11,18 @@
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
 	import type { ChildrenProps } from "$lib/ts/types";
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 	let { children }: ChildrenProps = $props();
 
 	inject({ mode: dev ? "development" : "production" });
 
 	let viewTransitionAPI = $state(false);
+
+	if (typeof window !== "undefined") {
+		gsap.registerPlugin(ScrollTrigger);
+	}
 
 	onMount(() => {
 		// @ts-ignore

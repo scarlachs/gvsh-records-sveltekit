@@ -1,28 +1,24 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
-	import { randomAlphaNumeric } from "~/lib/ts/utils";
-
-	type Props = {
-		[key: string]: any;
-	};
+	import { randomAlphaNumeric } from "$lib/ts/utils";
+	import type { LogoProps } from "$lib/ts/types";
 
 	const id = `shadcn-svelte-${randomAlphaNumeric()}`;
-	let { ...rest }: Props = $props();
+	let { wordmark, ...restProps }: LogoProps = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>
 
 <svg
-	xmlns="http://www.w3.org/2000/svg"
 	width="256"
 	height="256"
 	viewBox="0 0 256 256"
 	fill="none"
-	aria-labelledby="shadcn-svelte"
-	{...rest}
+	xmlns="http://www.w3.org/2000/svg"
+	aria-labelledby={id}
+	{...restProps}
 >
 	<title {id}>shadcn-svelte</title>
-	<rect width="256" height="256" fill="none"></rect>
 	<line
 		x1="208"
 		y1="128"
@@ -32,7 +28,7 @@
 		stroke="#EB4F27"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-		stroke-width="16"
+		stroke-width="32"
 	></line>
 	<line
 		x1="192"
@@ -43,6 +39,6 @@
 		stroke="#EB4F27"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-		stroke-width="16"
+		stroke-width="32"
 	></line>
 </svg>

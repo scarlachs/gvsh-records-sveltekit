@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ListItem } from "$lib/ts/types";
-	import { buttonVariants } from "./ui/button";
+	import { buttonVariants } from "$lib/components/ui/button";
 
 	const items: ListItem[] = [
 		{

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as DropdownMenu from "./ui/dropdown-menu/index.js";
-	import { buttonVariants } from "./ui/button/index.js";
+	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+	import { buttonVariants } from "$lib/components/ui/button/index.js";
 	import Sun from "lucide-svelte/icons/sun";
 	import Moon from "lucide-svelte/icons/moon";
 	import { resetMode, setMode } from "mode-watcher";
@@ -13,7 +13,7 @@
 		<span class="sr-only">Farbmodus umschalten</span>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end">
-		<DropdownMenu.Item onclick={() => setMode("light")}>Light</DropdownMenu.Item>
+		<DropdownMenu.Item onclick={() => setMode("light")}><span>Light</span></DropdownMenu.Item>
 		<DropdownMenu.Item onclick={() => setMode("dark")}>Dark</DropdownMenu.Item>
 		<DropdownMenu.Item onclick={() => resetMode()}>System</DropdownMenu.Item>
 	</DropdownMenu.Content>

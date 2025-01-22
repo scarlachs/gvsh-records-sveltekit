@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Accordion from "$lib/components/ui/accordion";
 	import type { IdProps, ListItem } from "$lib/ts/types";
-	import Section from "./Section.svelte";
+	import Section from "$lib/components/Section.svelte";
 
 	const wendwebProjects: ListItem[] = [
 		{
@@ -30,6 +30,14 @@
 		}
 	];
 
+	const bytediverProjects: (ListItem & { stack?: string })[] = [
+		{
+			label: "Abteilung Digital",
+			link: "https://www.abteilung-digital.de",
+			stack: "TYPO3, Tailwind CSS, TypeScript"
+		}
+	];
+
 	let { id }: IdProps = $props();
 </script>
 
@@ -43,12 +51,13 @@
 					Das war der Anfang einer jahrelangen Leidenschaft. 2014 habe ich für mein Hobby,
 					die Fotografie, meine erste eigene Website erstellt. Dadurch sammelte ich
 					Erfahrungen mit JavaScript und Bootstrap. Seit 2023 ist die Website mit
-					SvelteKit und TailwindCSS umgesetzt.
+					SvelteKit und Tailwind&nbsp;CSS umgesetzt.
 				</p>
 				<p class="mb-2">
 					2020 durfte ich für meinen Bruder, der als Fitness Coach selbstständig ist, eine
 					Website entwickeln und konnte meine Erfahrungen in Bootstrap und TypeScript
-					vertiefen. Seit 2024 ist die Website mit NextJS und TailwindCSS umgesetzt.
+					vertiefen. Seit 2024 ist die Website mit Next.js und Tailwind&nbsp;CSS
+					umgesetzt.
 				</p>
 				<p>
 					Von 2017 bis 2021 studierte ich Informatik. Seit August 2021 bin ich
@@ -72,17 +81,38 @@
 			<Accordion.Trigger>Meine beruflichen Erfahrungen</Accordion.Trigger>
 			<Accordion.Content>
 				<p class="mb-2">
-					Als Frontend-Entwickler bei der wendweb GmbH in Hannover habe ich von 08/2021
-					bis 06/2024 unter anderem folgende Projekte umgesetzt, die mit TYPO3, Bootstrap,
-					SCSS und TypeScript entstanden sind:
+					Seit Juli 2024 sind bei der Bytediver GmbH unter anderem folgende Projekte
+					entstanden:
 				</p>
 				<ul class="mb-4 list-inside list-disc">
+					{#each bytediverProjects as project}
+						<li>
+							<p>
+								<a
+									class="underline hover:no-underline"
+									href={project.link}
+									rel="noopener nofollow"
+									target="_blank"
+								>
+									{project.label}
+								</a>
+								{#if project.stack}- {project.stack}{/if}
+							</p>
+						</li>
+					{/each}
+				</ul>
+				<p class="mb-2">
+					Zuvor war ich bei der wendweb GmbH beschäftigt und habe dort von August 2021 bis
+					Juni 2024 unter anderem folgende Projekte mit TYPO3, Bootstrap, SCSS und
+					TypeScript umgesetzt:
+				</p>
+				<ul class="list-inside list-disc">
 					{#each wendwebProjects as project}
 						<li>
 							<a
 								class="underline hover:no-underline"
 								href={project.link}
-								rel="noopener"
+								rel="noopener nofollow"
 								target="_blank"
 							>
 								{project.label}
@@ -90,10 +120,6 @@
 						</li>
 					{/each}
 				</ul>
-				<p>
-					Seit 07/2024 bin ich bei der Bytediver GmbH angestellt und freue mich darauf,
-					hier zukünftig weitere Projekte zeigen zu dürfen.
-				</p>
 			</Accordion.Content>
 		</Accordion.Item>
 	</Accordion.Root>
