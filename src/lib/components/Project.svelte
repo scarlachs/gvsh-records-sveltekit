@@ -26,7 +26,7 @@
 	bind:this={trigger}
 >
 	<div
-		class={`motion-safe:opacity-0${index % 2 === 1 ? " order-2 motion-safe:translate-x-[100px] lg:pe-16" : " motion-safe:-translate-x-[100px] max-md:order-2 lg:ps-16"}`}
+		class={`motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]${index % 2 === 1 ? " order-2 md:motion-safe:translate-x-[100px] lg:pe-16" : " max-md:order-2 md:motion-safe:-translate-x-[100px] lg:ps-16"}`}
 		bind:this={text}
 	>
 		{#if project.text.usedStack && project.text.usedStack.length > 0}
@@ -66,7 +66,7 @@
 		</ButtonGroup>
 	</div>
 	<div
-		class={`aspect-[1.6530612245] w-full motion-safe:opacity-0${index % 2 === 1 ? " order-1 motion-safe:-translate-x-[100px]" : " motion-safe:translate-x-[100px]"}`}
+		class={`aspect-[1.6530612245] w-full motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]${index % 2 === 1 ? " order-1 md:motion-safe:-translate-x-[100px]" : " md:motion-safe:translate-x-[100px]"}`}
 		bind:this={image}
 	>
 		<enhanced:img
