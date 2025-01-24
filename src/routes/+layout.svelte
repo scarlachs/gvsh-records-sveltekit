@@ -2,7 +2,7 @@
 	import "~/app.css";
 	import "@fontsource-variable/montserrat";
 	import { onMount } from "svelte";
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
 	import ViewTransition from "$lib/navigation.svelte";
 	import PageTransition from "$lib/transition.svelte";
 	import { ModeWatcher } from "mode-watcher";
@@ -50,23 +50,23 @@
 </script>
 
 <svelte:head>
-	{#if $page.data.title}
-		<meta name="title" content="{$page.data.title} | Pascal Schaar" />
-		<title>{$page.data.title} | Pascal Schaar</title>
-		<meta property="og:title" content="{$page.data.title} | Pascal Schaar" />
+	{#if page.data.title}
+		<meta name="title" content="{page.data.title} | Pascal Schaar" />
+		<title>{page.data.title} | Pascal Schaar</title>
+		<meta property="og:title" content="{page.data.title} | Pascal Schaar" />
 	{/if}
 
-	{#if $page.data.description}
-		<meta name="description" content={$page.data.description} />
-		<meta property="og:description" content={$page.data.description} />
+	{#if page.data.description}
+		<meta name="description" content={page.data.description} />
+		<meta property="og:description" content={page.data.description} />
 	{/if}
 
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:url" content={page.url.href} />
 	<meta property="og:locale" content="de_DE" />
 
-	<meta name="url" content={$page.url.href} />
-	<link rel="canonical" href={$page.url.href} />
+	<meta name="url" content={page.url.href} />
+	<link rel="canonical" href={page.url.href} />
 
 	<meta name="generator" content="SvelteKit v2.5.26" />
 </svelte:head>
@@ -79,7 +79,7 @@
 
 <main>
 	{#if !viewTransitionAPI}
-		<PageTransition url={$page.url.pathname}>
+		<PageTransition url={page.url.pathname}>
 			{@render children?.()}
 		</PageTransition>
 	{:else}
