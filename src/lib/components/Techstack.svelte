@@ -26,9 +26,7 @@
 		<Carousel.Content class="-ml-8 items-center lg:-ml-20">
 			{#each items as item}
 				<Carousel.Item class="basis-auto pl-8 lg:pl-20">
-					<span class="text-4xl font-semibold">
-						<TechstackLogo {item} class="h-6 w-auto lg:h-12" wordmark={true} />
-					</span>
+					<TechstackLogo {item} class="h-6 w-auto lg:h-12" wordmark={true} />
 				</Carousel.Item>
 			{/each}
 		</Carousel.Content>
