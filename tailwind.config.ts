@@ -28,6 +28,7 @@ const config: Config = {
 			},
 			slate: colors.slate,
 			white: colors.white,
+			black: colors.black,
 			zinc: {
 				50: colors.zinc["50"],
 				950: colors.zinc["950"]

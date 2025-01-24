@@ -30,10 +30,10 @@
 			"destination": "https://de.trustpilot.com/review/schaar.dev",
 			"permanent": true
 		},
-        {
-            "source": "/google",
-            "destination": "https://g.page/r/CROuaIW3df7hEBM/review",
-            "permanent": true
-        }
+		{
+			"source": "/google",
+			"destination": "https://g.page/r/CROuaIW3df7hEBM/review",
+			"permanent": true
+		}
 	]
 }

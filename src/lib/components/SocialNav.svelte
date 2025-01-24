@@ -2,7 +2,7 @@
 	import { links } from "$lib/ts/constants";
 	import GithubBrands from "svelte-awesome-icons/GithubBrands.svelte";
 	import LinkedinBrands from "svelte-awesome-icons/LinkedinBrands.svelte";
-	import { buttonVariants } from "./ui/button";
+	import { buttonVariants } from "$lib/components/ui/button";
 </script>
 
 <nav class="flex items-center" aria-label="Social Navigation">

@@ -1,11 +1,8 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
+	import type { LogoProps } from "$lib/ts/types";
 
-	type Props = {
-		[key: string]: any;
-	};
-
-	let { ...rest }: Props = $props();
+	let { wordmark, ...rest }: LogoProps = $props();
 
 	type $$Props = SVGAttributes<SVGElement>;
 </script>

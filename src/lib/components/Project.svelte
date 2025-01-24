@@ -1,73 +1,47 @@
 <script lang="ts">
 	import type { Project, ProjectProps } from "$lib/ts/types";
-	import ButtonGroup from "./ButtonGroup.svelte";
-	import AstroLogo from "./logos/techstack/AstroLogo.svelte";
-	import BootstrapLogo from "./logos/techstack/BootstrapLogo.svg.svelte";
-	import CssLogo from "./logos/techstack/CssLogo.svg.svelte";
-	import HtmlLogo from "./logos/techstack/HtmlLogo.svg.svelte";
-	import JavascriptLogo from "./logos/techstack/JavascriptLogo.svg.svelte";
-	import NextjsLogo from "./logos/techstack/NextjsLogo.svg.svelte";
-	import ReactLogo from "./logos/techstack/ReactLogo.svg.svelte";
-	import ScssLogo from "./logos/techstack/ScssLogo.svg.svelte";
-	import ShadcnLogo from "./logos/techstack/ShadcnLogo.svg.svelte";
-	import ShadcnSvelteLogo from "./logos/techstack/ShadcnsvelteLogo.svg.svelte";
-	import StoryblokLogo from "./logos/techstack/StoryblokLogo.svg.svelte";
-	import SveltekitLogo from "./logos/techstack/SveltekitLogo.svg.svelte";
-	import TailwindcssLogo from "./logos/techstack/TailwindcssLogo.svg.svelte";
-	import TypescriptLogo from "./logos/techstack/TypescriptLogo.svg.svelte";
-	import Typo3Logo from "./logos/techstack/Typo3Logo.svg.svelte";
-	import WebpackLogo from "./logos/techstack/WebpackLogo.svg.svelte";
-	import { buttonVariants } from "./ui/button";
+	import ButtonGroup from "$lib/components/ButtonGroup.svelte";
+	import { buttonVariants } from "$lib/components/ui/button";
 	import ExternalLink from "lucide-svelte/icons/external-link";
 	import GithubBrands from "svelte-awesome-icons/GithubBrands.svelte";
+	import TechstackLogo from "$lib/components/logos/TechstackLogo.svelte";
+	import { onMount } from "svelte";
+	import { animateFadeIn } from "$lib/ts/utils";
 
 	let { project, index }: ProjectProps = $props();
+
+	let trigger: HTMLElement;
+	let text: HTMLElement;
+	let image: HTMLElement;
+
+	onMount(() => {
+		[text, image].forEach((target) => {
+			animateFadeIn(trigger, target);
+		});
+	});
 </script>
 
-<div class="mb-16 grid gap-5 last:mb-0 md:mb-24 md:grid-cols-2 md:items-center md:gap-10">
-	<div class={index % 2 === 1 ? "order-2 lg:pe-16" : "max-md:order-2 lg:ps-16"}>
+<div
+	class="mb-16 grid gap-5 last:mb-0 md:mb-24 md:grid-cols-2 md:items-center md:gap-10"
+	bind:this={trigger}
+>
+	<div
+		class={`motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]${index % 2 === 1 ? " order-2 md:motion-safe:translate-x-[100px] lg:pe-16" : " max-md:order-2 md:motion-safe:-translate-x-[100px] lg:ps-16"}`}
+		bind:this={text}
+	>
 		{#if project.text.usedStack && project.text.usedStack.length > 0}
-			<ul class="mb-2.5 flex gap-3">
+			<ul class="mb-2.5 flex items-center gap-4">
 				{#each project.text.usedStack as item}
 					<li>
-						{#if item === "html"}
-							<HtmlLogo class="size-7" />
-						{:else if item === "css"}
-							<CssLogo class="size-7" />
-						{:else if item === "tailwindcss"}
-							<TailwindcssLogo class="size-7" />
-						{:else if item === "shadcn"}
-							<ShadcnLogo class="size-7" />
-						{:else if item === "shadcn-svelte"}
-							<ShadcnSvelteLogo class="size-7" />
-						{:else if item === "bootstrap"}
-							<BootstrapLogo class="size-7" />
-						{:else if item === "scss"}
-							<ScssLogo class="size-7" />
-						{:else if item === "javascript"}
-							<JavascriptLogo class="size-7" />
-						{:else if item === "typescript"}
-							<TypescriptLogo class="size-7" />
-						{:else if item === "sveltekit"}
-							<SveltekitLogo class="size-7" />
-						{:else if item === "astro"}
-							<AstroLogo class="size-7" />
-						{:else if item === "react"}
-							<ReactLogo class="size-7" />
-						{:else if item === "nextjs"}
-							<NextjsLogo class="size-7" />
-						{:else if item === "webpack"}
-							<WebpackLogo class="size-7" />
-						{:else if item === "typo3"}
-							<Typo3Logo class="size-7" />
-						{:else if item === "storyblok"}
-							<StoryblokLogo class="size-7" />
-						{/if}
+						<TechstackLogo
+							{item}
+							class={`size-6${item === "gsap" ? " w-auto" : " lg:size-8"}`}
+						/>
 					</li>
 				{/each}
 			</ul>
 		{/if}
-		<h2 class="text-2xl font-bold md:text-3xl">{project.text.title}</h2>
+		<h2 class="text-2xl font-bold md:text-3xl lg:text-4xl">{project.text.title}</h2>
 		<p class="mt-2.5 text-balance">{project.text.copy}</p>
 		<ButtonGroup class="mt-5">
 			<a
@@ -91,13 +65,16 @@
 			{/if}
 		</ButtonGroup>
 	</div>
-	<div class:order-1={index % 2 === 1}>
+	<div
+		class={`aspect-[1.6530612245] w-full motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]${index % 2 === 1 ? " order-1 md:motion-safe:-translate-x-[100px]" : " md:motion-safe:translate-x-[100px]"}`}
+		bind:this={image}
+	>
 		<enhanced:img
 			class="h-auto w-full"
 			src={project.image.file}
 			alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
 			sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
-			loading={index === 0 ? undefined : "lazy"}
+			loading="lazy"
 		/>
 	</div>
 </div>

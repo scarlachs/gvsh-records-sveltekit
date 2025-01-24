@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { IdProps, Project as TProject } from "$lib/ts/types";
-	import Project from "./Project.svelte";
+	import Project from "$lib/components/Project.svelte";
 	import PortfolioPhotography from "$lib/images/projects/website-portfolio-photography.png?enhanced";
 	import PortfolioDeveloper from "$lib/images/projects/website-portfolio-developer.png?enhanced";
 	import LandingpagePersonalCoach from "$lib/images/projects/website-landingpage-personal-coach.png?enhanced";
 	import LandingpageMediaDesigner from "$lib/images/projects/website-landingpage-media-designer.png?enhanced";
-	import Section from "./Section.svelte";
+	import Section from "$lib/components/Section.svelte";
 
 	const projects: TProject[] = [
 		{
@@ -21,11 +21,11 @@
 		},
 		{
 			text: {
-				title: "Portfolio: Entwicklung",
+				title: "Landingpage: Entwicklung",
 				copy: "Willkommen in meiner Welt des Codes! Diese Website betrachtest du bereits. Wahlweise im Light- oder Dark-Mode.",
 				website: "https://www.schaar.dev",
 				github: "https://github.com/scarlachs/dev-portfolio-sveltekit",
-				usedStack: ["sveltekit", "typescript", "tailwindcss", "shadcn-svelte"]
+				usedStack: ["sveltekit", "typescript", "tailwindcss", "shadcn-svelte", "gsap"]
 			},
 			image: {
 				file: PortfolioDeveloper
@@ -58,7 +58,7 @@
 	let { id }: IdProps = $props();
 </script>
 
-<Section {id}>
+<Section {id} class="overflow-clip">
 	{#each projects as project, index}
 		<Project {project} {index} />
 	{/each}

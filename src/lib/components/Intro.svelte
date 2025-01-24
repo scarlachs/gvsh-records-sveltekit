@@ -1,7 +1,7 @@
 <script lang="ts">
-	import ButtonGroup from "./ButtonGroup.svelte";
-	import { buttonVariants } from "./ui/button";
-	import Section from "./Section.svelte";
+	import ButtonGroup from "$lib/components/ButtonGroup.svelte";
+	import { buttonVariants } from "$lib/components/ui/button";
+	import Section from "$lib/components/Section.svelte";
 </script>
 
 <Section class="pt-12 md:pt-16">
@@ -25,6 +25,7 @@
 				alt="Ein Portrait von Pascal Schaar"
 				class="img-mask h-auto w-full [mask-position:-1rem_center] md:[mask-position:-1.5rem_center]"
 				sizes="(max-width: 639.98px) calc((100vw - 2rem) * 0.75), (max-width: 767.98px) 432px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 506px, 556px"
+				fetchpriority="high"
 			/>
 		</div>
 	</div>
