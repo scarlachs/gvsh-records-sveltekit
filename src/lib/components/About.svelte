@@ -5,6 +5,10 @@
 
 	const wendwebProjects: ListItem[] = [
 		{
+			label: "Fachklinik für Rehabilitation und Akutmedizin | DianaKlinik",
+			link: "https://www.diana-klinik.de"
+		},
+		{
 			label: "NETFOX AG",
 			link: "https://www.netfox.de"
 		},
@@ -90,7 +94,7 @@
 							<p>
 								<a
 									class="underline hover:no-underline"
-									href={project.link}
+									href={`${project.link}?ref=pascalschaar`}
 									rel="noopener nofollow"
 									target="_blank"
 								>
@@ -111,7 +115,7 @@
 						<li>
 							<a
 								class="underline hover:no-underline"
-								href={project.link}
+								href={`${project.link}?ref=pascalschaar`}
 								rel="noopener nofollow"
 								target="_blank"
 							>
