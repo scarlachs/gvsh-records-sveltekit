@@ -94,7 +94,7 @@
 							<p>
 								<a
 									class="underline hover:no-underline"
-									href={project.link}
+									href={`${project.link}?ref=pascalschaar`}
 									rel="noopener nofollow"
 									target="_blank"
 								>
@@ -115,7 +115,7 @@
 						<li>
 							<a
 								class="underline hover:no-underline"
-								href={project.link}
+								href={`${project.link}?ref=pascalschaar`}
 								rel="noopener nofollow"
 								target="_blank"
 							>
