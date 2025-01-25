@@ -5,6 +5,10 @@
 
 	const wendwebProjects: ListItem[] = [
 		{
+			label: "Fachklinik für Rehabilitation und Akutmedizin | DianaKlinik",
+			link: "https://www.diana-klinik.de"
+		},
+		{
 			label: "NETFOX AG",
 			link: "https://www.netfox.de"
 		},
