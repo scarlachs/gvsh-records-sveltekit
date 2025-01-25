@@ -9,11 +9,11 @@
 			link: "https://www.diana-klinik.de"
 		},
 		{
-			label: "NETFOX AG",
+			label: "Ihr Partner für maßgeschneiderte IT-Lösungen | NETFOX AG",
 			link: "https://www.netfox.de"
 		},
 		{
-			label: "Alerds-Stiftung",
+			label: "Pflegekräfte & alternative Wohnformen für Senioren | Alerds-Stiftung",
 			link: "https://www.alerds-stiftung.de"
 		},
 		{
@@ -21,15 +21,15 @@
 			link: "https://www.tricor.de"
 		},
 		{
-			label: "wendweb GmbH",
+			label: "Digitalagentur für TYPO3 & Shopware aus Hannover | wendweb GmbH",
 			link: "https://www.wendweb.de"
 		},
 		{
-			label: "STEINBERG.GÄRTEN e.K.",
+			label: "Gartengestaltung in Hannover & Region | STEINBERG.GÄRTEN e.K.",
 			link: "https://www.steinberg-gaerten.de"
 		},
 		{
-			label: "SCHWARTAUER WERKE GmbH & Co. KG - Individuelle Etiketten konfigurieren",
+			label: "Individuellen Etiketten | SCHWARTAUER WERKE GmbH & Co. KG",
 			link: "https://www.schwartau-professional.de/beratung-service/individuelle-etiketten-fuer-portionsglaeser-konfigurieren#c51"
 		}
 	];
