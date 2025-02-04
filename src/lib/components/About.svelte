@@ -91,7 +91,7 @@
 				<ul class="mb-4 list-inside list-disc">
 					{#each bytediverProjects as project}
 						<li>
-							<p>
+							<p class="inline">
 								<a
 									class="underline hover:no-underline"
 									href={`${project.link}?ref=pascalschaar`}
