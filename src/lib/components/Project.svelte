@@ -45,7 +45,7 @@
 		<p class="mt-2.5 text-balance">{project.text.copy}</p>
 		<ButtonGroup class="mt-5">
 			<a
-				href={project.text.website}
+				href={`${project.text.website}?ref=schaar.dev`}
 				class={buttonVariants({ variant: "default" })}
 				target="_blank"
 				rel="noopener"
