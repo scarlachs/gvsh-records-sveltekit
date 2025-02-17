@@ -1,14 +1,15 @@
 <script lang="ts">
+	import type { HTMLAttributes } from "svelte/elements";
 	import type { TechstackProps } from "$lib/ts/types";
 	import Section from "$lib/components/Section.svelte";
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
 	import AutoScroll from "embla-carousel-auto-scroll";
 	import TechstackLogo from "$lib/components/logos/TechstackLogo.svelte";
 
-	let { id, items }: TechstackProps = $props();
+	let { id, items, ...restProps }: TechstackProps & HTMLAttributes<HTMLElement> = $props();
 </script>
 
-<Section {id}>
+<Section {id} {...restProps}>
 	<Carousel.Root
 		opts={{
 			align: "start",

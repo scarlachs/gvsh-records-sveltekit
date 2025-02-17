@@ -2,21 +2,21 @@ import type { Stack } from "$lib/ts/types";
 import type { PageServerLoad } from "./$types";
 
 const items: Stack[] = [
-	"html",
-	"css",
-	"tailwindcss",
-	"shadcn",
-	"bootstrap",
-	"scss",
-	"javascript",
-	"typescript",
-	"sveltekit",
 	"astro",
-	"react",
+	"bootstrap",
+	"css",
+	"gsap",
+	"html",
+	"javascript",
 	"nextjs",
-	"typo3",
+	"react",
+	"scss",
+	"shadcn",
 	"storyblok",
-	"gsap"
+	"sveltekit",
+	"tailwindcss",
+	"typescript",
+	"typo3"
 ];
 
 export const load: PageServerLoad = async () => {

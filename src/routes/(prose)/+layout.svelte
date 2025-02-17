@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { ChildrenProps } from "$lib/ts/types";
 	import { onMount } from "svelte";
 	import { animateFadeIn } from "$lib/ts/utils";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	let { children }: ChildrenProps = $props();
+	let { children }: HTMLAttributes<HTMLDivElement> = $props();
 
 	let trigger: HTMLElement;
 

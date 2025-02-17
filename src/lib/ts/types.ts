@@ -2,32 +2,22 @@ import type { Picture } from "vite-imagetools";
 import type { Snippet } from "svelte";
 
 type Stack =
-	| "html"
+	| "astro"
+	| "bootstrap"
 	| "css"
-	| "tailwindcss"
+	| "gsap"
+	| "html"
+	| "javascript"
+	| "nextjs"
+	| "react"
+	| "scss"
 	| "shadcn"
 	| "shadcn-svelte"
-	| "bootstrap"
-	| "scss"
-	| "javascript"
-	| "typescript"
-	| "sveltekit"
-	| "astro"
-	| "react"
-	| "nextjs"
-	| "typo3"
 	| "storyblok"
-	| "gsap";
-
-type ChildrenProps = {
-	children?: Snippet;
-};
-
-type ClassProps = {
-	class?: string | null;
-};
-
-type ButtonProps = ClassProps & ChildrenProps;
+	| "sveltekit"
+	| "tailwindcss"
+	| "typescript"
+	| "typo3";
 
 type ListItem = {
 	label: string;
@@ -57,43 +47,27 @@ type ProjectProps = {
 	index: number;
 };
 
-type IdProps = {
-	id: string;
-};
-
-type SectionProps = {
-	id?: string;
-} & ClassProps &
-	ChildrenProps;
-
 type TransitionProps = {
 	url: string;
-} & ChildrenProps;
+};
 
 type TechstackProps = {
 	items: Stack[];
-} & IdProps;
+};
 
 type TechstackLogoProps = {
 	item: Stack;
-	class?: string;
 } & LogoProps;
 
 type LogoProps = {
 	wordmark?: boolean;
-	[key: string]: any;
 };
 
 export type {
 	Stack,
-	ClassProps,
-	ChildrenProps,
-	ButtonProps,
 	ListItem,
 	Project,
 	ProjectProps,
-	IdProps,
-	SectionProps,
 	TransitionProps,
 	TechstackProps,
 	TechstackLogoProps,

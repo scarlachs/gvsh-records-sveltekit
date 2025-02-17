@@ -1,7 +1,8 @@
 <script lang="ts">
+	import type { HTMLAttributes } from "svelte/elements";
 	import type { TransitionProps } from "$lib/ts/types";
 
-	let { url, children }: TransitionProps = $props();
+	let { url, children }: TransitionProps & HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
 {#key url}

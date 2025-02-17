@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Project, ProjectProps } from "$lib/ts/types";
+	import type { ProjectProps } from "$lib/ts/types";
 	import ButtonGroup from "$lib/components/ButtonGroup.svelte";
 	import { buttonVariants } from "$lib/components/ui/button";
 	import ExternalLink from "lucide-svelte/icons/external-link";
@@ -74,7 +74,6 @@
 			src={project.image.file}
 			alt={project.image.alt ? project.image.alt : `Website ${project.text.website}`}
 			sizes="(max-width: 639.98px) calc(100vw - 2rem), (max-width: 767.98px) 576px, (max-width: 1023.98px) 332px, (max-width: 1279.98px) 460px, (max-width: 1399.98px) 588px, 648px"
-			loading="lazy"
 		/>
 	</div>
 </div>

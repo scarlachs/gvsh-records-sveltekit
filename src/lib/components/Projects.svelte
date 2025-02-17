@@ -1,11 +1,13 @@
 <script lang="ts">
-	import type { IdProps, Project as TProject } from "$lib/ts/types";
+	import type { Project as TProject } from "$lib/ts/types";
 	import Project from "$lib/components/Project.svelte";
 	import PortfolioPhotography from "$lib/images/projects/website-portfolio-photography.png?enhanced";
 	import PortfolioDeveloper from "$lib/images/projects/website-portfolio-developer.png?enhanced";
 	import LandingpagePersonalCoach from "$lib/images/projects/website-landingpage-personal-coach.png?enhanced";
 	import LandingpageMediaDesigner from "$lib/images/projects/website-landingpage-media-designer.png?enhanced";
 	import Section from "$lib/components/Section.svelte";
+	import type { HTMLAttributes } from "svelte/elements";
+	import { cn } from "../ts/utils";
 
 	const projects: TProject[] = [
 		{
@@ -55,10 +57,10 @@
 		}
 	];
 
-	let { id }: IdProps = $props();
+	let { id, ...restProps }: HTMLAttributes<HTMLElement> = $props();
 </script>
 
-<Section {id} class="overflow-clip">
+<Section {id} class={cn("overflow-clip", restProps.class)} {...restProps}>
 	{#each projects as project, index}
 		<Project {project} {index} />
 	{/each}

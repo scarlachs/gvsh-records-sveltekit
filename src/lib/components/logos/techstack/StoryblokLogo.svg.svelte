@@ -4,9 +4,7 @@
 	import type { LogoProps } from "$lib/ts/types";
 
 	const id = `storyblok-${randomAlphaNumeric()}`;
-	let { wordmark, ...restProps }: LogoProps = $props();
-
-	type $$Props = SVGAttributes<SVGElement>;
+	let { wordmark = false, ...restProps }: LogoProps & SVGAttributes<SVGElement> = $props();
 </script>
 
 {#if wordmark}
@@ -42,7 +40,7 @@
 		xmlns="http://www.w3.org/2000/svg"
 		aria-labelledby={`${id}-light`}
 		{...restProps}
-		class={cn(restProps.class, "hidden dark:block")}
+		class={cn(restProps.class, "not-dark:hidden")}
 	>
 		<title id={`${id}-light`}>Storyblok</title>
 		<path
@@ -85,7 +83,7 @@
 		xmlns="http://www.w3.org/2000/svg"
 		aria-labelledby={`${id}-light`}
 		{...restProps}
-		class={cn(restProps.class, "hidden dark:block")}
+		class={cn(restProps.class, "not-dark:hidden")}
 	>
 		<title id={`${id}-light`}>Storyblok</title>
 		<path

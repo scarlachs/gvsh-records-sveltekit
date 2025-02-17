@@ -8,15 +8,11 @@
 	import { ModeWatcher } from "mode-watcher";
 	import Header from "$lib/components/Header.svelte";
 	import Footer from "$lib/components/Footer.svelte";
-	import { dev } from "$app/environment";
-	import { inject } from "@vercel/analytics";
-	import type { ChildrenProps } from "$lib/ts/types";
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	let { children }: ChildrenProps = $props();
-
-	inject({ mode: dev ? "development" : "production" });
+	let { children }: HTMLAttributes<HTMLDivElement> = $props();
 
 	let viewTransitionAPI = $state(false);
 

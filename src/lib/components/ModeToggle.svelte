@@ -10,11 +10,11 @@
 	<DropdownMenu.Trigger class={buttonVariants({ variant: "ghost", size: "icon" })}>
 		<Sun class="scale-100 motion-safe:transition-all dark:scale-0" />
 		<Moon class="absolute scale-0 motion-safe:transition-all dark:scale-100" />
-		<span class="sr-only">Farbmodus umschalten</span>
+		<span class="sr-only">Hell-/Dunkelmodus wechseln</span>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end">
-		<DropdownMenu.Item onclick={() => setMode("light")}><span>Light</span></DropdownMenu.Item>
-		<DropdownMenu.Item onclick={() => setMode("dark")}>Dark</DropdownMenu.Item>
-		<DropdownMenu.Item onclick={() => resetMode()}>System</DropdownMenu.Item>
+		<DropdownMenu.Item onclick={() => setMode("light")}><span>Hell</span></DropdownMenu.Item>
+		<DropdownMenu.Item onclick={() => setMode("dark")}><span>Dunkel</span></DropdownMenu.Item>
+		<DropdownMenu.Item onclick={() => resetMode()}><span>System</span></DropdownMenu.Item>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>

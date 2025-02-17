@@ -18,41 +18,44 @@
 	import type { SVGAttributes } from "svelte/elements";
 	import GsapLogo from "./techstack/GsapLogo.svelte";
 
-	let { item, class: className, wordmark = false, ...rest }: TechstackLogoProps = $props();
-
-	type $$Props = SVGAttributes<SVGElement>;
+	let {
+		item,
+		class: className,
+		wordmark = false,
+		...restProps
+	}: TechstackLogoProps & SVGAttributes<SVGElement> = $props();
 </script>
 
-{#if item === "html"}
-	<HtmlLogo class={className} {wordmark} {...rest} />
-{:else if item === "css"}
-	<CssLogo class={className} {wordmark} {...rest} />
-{:else if item === "tailwindcss"}
-	<TailwindcssLogo class={className} {wordmark} {...rest} />
-{:else if item === "shadcn"}
-	<ShadcnLogo class={className} {wordmark} {...rest} />
-{:else if item === "shadcn-svelte"}
-	<ShadcnSvelteLogo class={className} {wordmark} {...rest} />
+{#if item === "astro"}
+	<AstroLogo class={className} {wordmark} {...restProps} />
 {:else if item === "bootstrap"}
-	<BootstrapLogo class={className} {wordmark} {...rest} />
-{:else if item === "scss"}
-	<ScssLogo class={className} {wordmark} {...rest} />
-{:else if item === "javascript"}
-	<JavascriptLogo class={className} {wordmark} {...rest} />
-{:else if item === "typescript"}
-	<TypescriptLogo class={className} {wordmark} {...rest} />
-{:else if item === "sveltekit"}
-	<SveltekitLogo class={className} {wordmark} {...rest} />
-{:else if item === "astro"}
-	<AstroLogo class={className} {wordmark} {...rest} />
-{:else if item === "react"}
-	<ReactLogo class={className} {wordmark} {...rest} />
-{:else if item === "nextjs"}
-	<NextjsLogo class={className} {wordmark} {...rest} />
-{:else if item === "typo3"}
-	<Typo3Logo class={className} {wordmark} {...rest} />
-{:else if item === "storyblok"}
-	<StoryblokLogo class={className} {wordmark} {...rest} />
+	<BootstrapLogo class={className} {...restProps} />
+{:else if item === "css"}
+	<CssLogo class={className} {...restProps} />
 {:else if item === "gsap"}
-	<GsapLogo class={className} {wordmark} {...rest} />
+	<GsapLogo class={className} {wordmark} {...restProps} />
+{:else if item === "html"}
+	<HtmlLogo class={className} {...restProps} />
+{:else if item === "javascript"}
+	<JavascriptLogo class={className} {...restProps} />
+{:else if item === "nextjs"}
+	<NextjsLogo class={className} {wordmark} {...restProps} />
+{:else if item === "react"}
+	<ReactLogo class={className} {...restProps} />
+{:else if item === "scss"}
+	<ScssLogo class={className} {...restProps} />
+{:else if item === "shadcn"}
+	<ShadcnLogo class={className} {wordmark} {...restProps} />
+{:else if item === "shadcn-svelte"}
+	<ShadcnSvelteLogo class={className} {...restProps} />
+{:else if item === "storyblok"}
+	<StoryblokLogo class={className} {wordmark} {...restProps} />
+{:else if item === "sveltekit"}
+	<SveltekitLogo class={className} {wordmark} {...restProps} />
+{:else if item === "tailwindcss"}
+	<TailwindcssLogo class={className} {wordmark} {...restProps} />
+{:else if item === "typescript"}
+	<TypescriptLogo class={className} {...restProps} />
+{:else if item === "typo3"}
+	<Typo3Logo class={className} {...restProps} />
 {/if}

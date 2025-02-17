@@ -1,7 +1,8 @@
 <script lang="ts">
 	import * as Accordion from "$lib/components/ui/accordion";
-	import type { IdProps, ListItem } from "$lib/ts/types";
+	import type { ListItem } from "$lib/ts/types";
 	import Section from "$lib/components/Section.svelte";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	const wendwebProjects: ListItem[] = [
 		{
@@ -42,10 +43,10 @@
 		}
 	];
 
-	let { id }: IdProps = $props();
+	let { id, ...restProps }: HTMLAttributes<HTMLElement> = $props();
 </script>
 
-<Section {id}>
+<Section {id} {...restProps}>
 	<Accordion.Root type="single" class="mx-auto w-full max-w-2xl">
 		<Accordion.Item value="item-1">
 			<Accordion.Trigger>Wie es anfing</Accordion.Trigger>

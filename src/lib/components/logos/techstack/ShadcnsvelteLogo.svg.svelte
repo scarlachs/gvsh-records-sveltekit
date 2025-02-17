@@ -1,12 +1,9 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
 	import { randomAlphaNumeric } from "$lib/ts/utils";
-	import type { LogoProps } from "$lib/ts/types";
 
 	const id = `shadcn-svelte-${randomAlphaNumeric()}`;
-	let { wordmark, ...restProps }: LogoProps = $props();
-
-	type $$Props = SVGAttributes<SVGElement>;
+	let { ...restProps }: SVGAttributes<SVGElement> = $props();
 </script>
 
 <svg
