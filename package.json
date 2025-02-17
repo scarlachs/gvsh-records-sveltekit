@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"preinstall": "npx only-allow pnpm",
+		"preinstall": "npx only-allow bun",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -19,6 +19,7 @@
 		"@sveltejs/kit": "^2.16.1",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.0.6",
 		"@types/eslint": "^9.6.1",
 		"@types/node": "^22.10.10",
 		"autoprefixer": "^10.4.20",
@@ -50,7 +51,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@vercel/analytics": "^1.4.1",
 		"gsap": "^3.12.7",
 		"mode-watcher": "^0.4.1"
 	}
