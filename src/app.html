@@ -25,11 +25,13 @@
 		<link rel="manifest" href="%sveltekit.assets%/site.webmanifest" />
 		<link rel="mask-icon" href="%sveltekit.assets%/safari-pinned-tab.svg" color="#e88274" />
 		<meta name="msapplication-TileColor" content="#224679" />
-		<meta name="theme-color" content="#e88274" />
+
+		<meta name="theme-color" content="#e88274" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#020618" media="(prefers-color-scheme: dark)" />
 
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="bg-background text-foreground">
+	<body data-sveltekit-preload-data="hover" class="bg-background text-foreground font-montserrat">
 		<div style="display: contents">
 			<div class="flex min-h-dvh flex-col [&>footer]:mt-auto [&>main]:flex-1">
 				%sveltekit.body%

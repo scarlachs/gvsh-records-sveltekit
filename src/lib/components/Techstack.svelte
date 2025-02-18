@@ -35,7 +35,7 @@
 	</Carousel.Root>
 </Section>
 
-<style lang="postcss">
+<style>
 	.overlay {
 		position: absolute;
 		inset: 0;
@@ -43,10 +43,10 @@
 		height: 100%;
 		background-image: linear-gradient(
 			90deg,
-			hsl(var(--background)) 3%,
-			hsl(var(--background) / 0) 25%,
-			hsl(var(--background) / 0) 75%,
-			hsl(var(--background)) 97%
+			var(--background) 3%,
+			color-mix(in oklch, var(--background) 0%, transparent) 25%,
+			color-mix(in oklch, var(--background) 0%, transparent) 75%,
+			var(--background) 97%
 		);
 		pointer-events: none;
 		z-index: 99;
