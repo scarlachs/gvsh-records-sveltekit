@@ -10,7 +10,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. **/*.{mjs,ts,tsx,json,astro,css} --ignore-path .gitignore"
+		"format": "prettier --write --plugin-search-dir=. **/*.{html,mjs,ts,json,svelte,css} --ignore-path .gitignore"
 	},
 	"devDependencies": {
 		"@fontsource-variable/montserrat": "^5.1.1",
