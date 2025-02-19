@@ -36,11 +36,11 @@
 	bind:this={trigger}
 >
 	<div
-		class="container flex items-center justify-between py-3 motion-safe:-translate-y-full motion-safe:opacity-0"
+		class="container flex items-center justify-between py-2 motion-safe:-translate-y-full motion-safe:opacity-0"
 		bind:this={target}
 	>
 		<a
-			class="focus-visible:ring-foreground focus-visible:ring-offset-background h-9 rounded-md focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:outline-none"
+			class="focus-visible:ring-foreground focus-visible:ring-offset-background h-11 rounded-md focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:outline-none"
 			href="/"
 		>
 			<PascalLogo class="motion-safe:animate-logo-rotate inline-flex h-full w-auto" />
@@ -50,9 +50,9 @@
 		<div class="flex h-9 items-center space-x-2">
 			<nav class="flex items-center max-sm:hidden" aria-label="Hauptnavigation">
 				{#each items as item}
-					<a href="/#{item.link}" class={buttonVariants({ variant: "ghost" })}
-						>{item.label}</a
-					>
+					<a href="/#{item.link}" class={buttonVariants({ variant: "ghost" })}>
+						{item.label}
+					</a>
 				{/each}
 			</nav>
 			<Separator orientation="vertical" class="max-sm:hidden" />
