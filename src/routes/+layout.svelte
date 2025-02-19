@@ -11,10 +11,18 @@
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 	import type { HTMLAttributes } from "svelte/elements";
+	import { browser, dev } from "$app/environment";
+	import { afterNavigate, beforeNavigate } from "$app/navigation";
+	import posthog from "posthog-js";
 
 	let { children }: HTMLAttributes<HTMLDivElement> = $props();
 
 	let viewTransitionAPI = $state(false);
+
+	if (!dev && browser) {
+		beforeNavigate(() => posthog.capture("$pageleave"));
+		afterNavigate(() => posthog.capture("$pageview"));
+	}
 
 	if (typeof window !== "undefined") {
 		gsap.registerPlugin(ScrollTrigger);
