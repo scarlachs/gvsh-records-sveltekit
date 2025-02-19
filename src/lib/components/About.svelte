@@ -95,7 +95,7 @@
 							<p class="inline">
 								<a
 									class="underline hover:no-underline"
-									href={`${project.link}?ref=pascalschaar`}
+									href={`${project.link}?ref=schaar.dev`}
 									rel="noopener nofollow"
 									target="_blank"
 								>
@@ -116,7 +116,7 @@
 						<li>
 							<a
 								class="underline hover:no-underline"
-								href={`${project.link}?ref=pascalschaar`}
+								href={`${project.link}?ref=schaar.dev`}
 								rel="noopener nofollow"
 								target="_blank"
 							>
