@@ -4,7 +4,6 @@
 	import PortfolioPhotography from "$lib/images/projects/website-portfolio-photography.png?enhanced";
 	import PortfolioDeveloper from "$lib/images/projects/website-portfolio-developer.png?enhanced";
 	import LandingpagePersonalCoach from "$lib/images/projects/website-landingpage-personal-coach.png?enhanced";
-	import LandingpageMediaDesigner from "$lib/images/projects/website-landingpage-media-designer.png?enhanced";
 	import Section from "$lib/components/Section.svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 	import { cn } from "../ts/utils";
@@ -42,17 +41,6 @@
 			},
 			image: {
 				file: LandingpagePersonalCoach
-			}
-		},
-		{
-			text: {
-				title: "Landingpage: Mediendesigner",
-				copy: "",
-				website: "https://www.creativestudio-lb.de",
-				usedStack: ["sveltekit", "typescript", "tailwindcss", "storyblok"]
-			},
-			image: {
-				file: LandingpageMediaDesigner
 			}
 		}
 	];
