@@ -40,7 +40,7 @@
 888
 
 `,
-			"font-family:monospace; color: #e88274;"
+			"font-family:monospace; color: #f17f6f;"
 		);
 	});
 </script>
@@ -64,7 +64,7 @@
 	<meta name="url" content={page.url.href} />
 	<link rel="canonical" href={page.url.href} />
 
-	<meta name="generator" content="SvelteKit v2.5.26" />
+	<meta name="generator" content="SvelteKit v2.17.2" />
 </svelte:head>
 
 <ViewTransition />
