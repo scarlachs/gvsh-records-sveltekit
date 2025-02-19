@@ -9,16 +9,16 @@
 	/* colors from https://uicolors.app/create */
 	/* and converted with https://oklch.com/ */
 	--color-primary-50: oklch(0.9739 0.0098 25.07);
-	--color-primary-100: oklch(0.9454 0.0212 28.33);
-	--color-primary-200: oklch(0.8998 0.0422 27.02);
-	--color-primary-300: oklch(0.8301 0.0723 27.21);
-	--color-primary-400: oklch(0.7149 0.1281 28.86);
-	--color-primary-500: oklch(0.6518 0.1524 29.59);
-	--color-primary-600: oklch(0.5795 0.165 30.39);
-	--color-primary-700: oklch(0.5067 0.1475 30.59);
-	--color-primary-800: oklch(0.4482 0.1225 30.33);
-	--color-primary-900: oklch(0.4037 0.0993 29.59);
-	--color-primary-950: oklch(0.263 0.0658 30.45);
+	--color-primary-100: oklch(0.9427 0.0256 26.53);
+	--color-primary-200: oklch(0.898 0.0482 27.59);
+	--color-primary-300: oklch(0.8287 0.0824 28.22);
+	--color-primary-400: oklch(0.721 0.1429 29.33);
+	--color-primary-500: oklch(0.6554 0.1729 30.34);
+	--color-primary-600: oklch(0.5871 0.186 30.94);
+	--color-primary-700: oklch(0.514 0.1644 31.24);
+	--color-primary-800: oklch(0.4528 0.1372 30.9);
+	--color-primary-900: oklch(0.4068 0.1101 30.59);
+	--color-primary-950: oklch(0.2648 0.0732 31.09);
 
 	--font-montserrat: "Montserrat Variable", var(--font-sans);
 
