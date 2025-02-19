@@ -24,9 +24,9 @@
 			})
 		]}
 	>
-		<Carousel.Content class="-ml-8 items-center lg:-ml-20">
+		<Carousel.Content class="-ml-8 items-center lg:-ml-16">
 			{#each items as item}
-				<Carousel.Item class="basis-auto pl-8 lg:pl-20">
+				<Carousel.Item class="basis-auto pl-8 lg:pl-16">
 					<TechstackLogo {item} class="h-6 w-auto lg:h-12" wordmark={true} />
 				</Carousel.Item>
 			{/each}
