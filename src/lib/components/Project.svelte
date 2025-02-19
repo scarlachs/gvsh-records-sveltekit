@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Project, ProjectProps } from "$lib/ts/types";
+	import type { ProjectProps } from "$lib/ts/types";
 	import ButtonGroup from "$lib/components/ButtonGroup.svelte";
 	import { buttonVariants } from "$lib/components/ui/button";
 	import ExternalLink from "lucide-svelte/icons/external-link";
@@ -26,7 +26,12 @@
 	bind:this={trigger}
 >
 	<div
-		class={`motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]${index % 2 === 1 ? " order-2 md:motion-safe:translate-x-[100px] lg:pe-16" : " max-md:order-2 md:motion-safe:-translate-x-[100px] lg:ps-16"}`}
+		class={[
+			"motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]",
+			index % 2 === 1
+				? "order-2 md:motion-safe:translate-x-[100px] lg:pe-16"
+				: "max-md:order-2 md:motion-safe:-translate-x-[100px] lg:ps-16"
+		]}
 		bind:this={text}
 	>
 		{#if project.text.usedStack && project.text.usedStack.length > 0}
@@ -35,7 +40,7 @@
 					<li>
 						<TechstackLogo
 							{item}
-							class={`size-6${item === "gsap" ? " w-auto" : " lg:size-8"}`}
+							class={["size-6", item === "gsap" ? " w-auto" : " lg:size-8"]}
 						/>
 					</li>
 				{/each}
@@ -59,14 +64,20 @@
 					rel="noopener"
 					target="_blank"
 					class={buttonVariants({ variant: "secondary" })}
-					>Code ansehen
+				>
+					Code ansehen
 					<GithubBrands />
 				</a>
 			{/if}
 		</ButtonGroup>
 	</div>
 	<div
-		class={`aspect-[1.6530612245] w-full motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]${index % 2 === 1 ? " order-1 md:motion-safe:-translate-x-[100px]" : " md:motion-safe:translate-x-[100px]"}`}
+		class={[
+			"aspect-[1.6530612245] w-full motion-safe:opacity-0 max-md:motion-safe:translate-y-[100px]",
+			index % 2 === 1
+				? " order-1 md:motion-safe:-translate-x-[100px]"
+				: " md:motion-safe:translate-x-[100px]"
+		]}
 		bind:this={image}
 	>
 		<enhanced:img

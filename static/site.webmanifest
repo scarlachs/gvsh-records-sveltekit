@@ -1,19 +1,25 @@
 {
-	"name": "",
-	"short_name": "",
+	"name": "schaar.dev",
+	"short_name": "schaar.dev",
 	"icons": [
 		{
-			"src": "/android-chrome-192x192.png",
+			"src": "/web-app-manifest-192x192.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "/android-chrome-512x512.png",
+			"src": "/web-app-manifest-512x512-mask.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "/web-app-manifest-512x512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#e88274",
-	"background_color": "#e88274",
+	"theme_color": "#f17f6f",
+	"background_color": "#020618",
 	"display": "standalone"
 }

@@ -1,14 +1,15 @@
 <script lang="ts">
+	import type { HTMLAttributes } from "svelte/elements";
 	import type { TechstackProps } from "$lib/ts/types";
 	import Section from "$lib/components/Section.svelte";
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
 	import AutoScroll from "embla-carousel-auto-scroll";
 	import TechstackLogo from "$lib/components/logos/TechstackLogo.svelte";
 
-	let { id, items }: TechstackProps = $props();
+	let { id, items, ...restProps }: TechstackProps & HTMLAttributes<HTMLElement> = $props();
 </script>
 
-<Section {id}>
+<Section {id} {...restProps}>
 	<Carousel.Root
 		opts={{
 			align: "start",
@@ -23,9 +24,9 @@
 			})
 		]}
 	>
-		<Carousel.Content class="-ml-8 items-center lg:-ml-20">
+		<Carousel.Content class="-ml-8 items-center lg:-ml-16">
 			{#each items as item}
-				<Carousel.Item class="basis-auto pl-8 lg:pl-20">
+				<Carousel.Item class="basis-auto pl-8 lg:pl-16">
 					<TechstackLogo {item} class="h-6 w-auto lg:h-12" wordmark={true} />
 				</Carousel.Item>
 			{/each}
@@ -34,7 +35,7 @@
 	</Carousel.Root>
 </Section>
 
-<style lang="postcss">
+<style>
 	.overlay {
 		position: absolute;
 		inset: 0;
@@ -42,10 +43,10 @@
 		height: 100%;
 		background-image: linear-gradient(
 			90deg,
-			hsl(var(--background)) 3%,
-			hsl(var(--background) / 0) 25%,
-			hsl(var(--background) / 0) 75%,
-			hsl(var(--background)) 97%
+			var(--background) 3%,
+			color-mix(in oklch, var(--background) 0%, transparent) 25%,
+			color-mix(in oklch, var(--background) 0%, transparent) 75%,
+			var(--background) 97%
 		);
 		pointer-events: none;
 		z-index: 99;

@@ -1,12 +1,9 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements";
 	import { cn, randomAlphaNumeric } from "$lib/ts/utils";
-	import type { LogoProps } from "$lib/ts/types";
 
 	const id = `react-${randomAlphaNumeric()}`;
-	let { wordmark, ...restProps }: LogoProps = $props();
-
-	type $$Props = SVGAttributes<SVGElement>;
+	let { ...restProps }: SVGAttributes<SVGElement> = $props();
 </script>
 
 <svg
@@ -17,7 +14,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	aria-labelledby={id}
 	{...restProps}
-	class={cn(restProps.class, "text-[#087EA4] dark:text-[#58c4dc]")}
+	class={cn(restProps.class, "text-[#087ea4] dark:text-[#58c4dc]")}
 >
 	<title {id}>React</title>
 	<circle cx="0" cy="0" r="2" fill="currentColor"></circle>

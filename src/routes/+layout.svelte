@@ -8,17 +8,21 @@
 	import { ModeWatcher } from "mode-watcher";
 	import Header from "$lib/components/Header.svelte";
 	import Footer from "$lib/components/Footer.svelte";
-	import { dev } from "$app/environment";
-	import { inject } from "@vercel/analytics";
-	import type { ChildrenProps } from "$lib/ts/types";
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+	import type { HTMLAttributes } from "svelte/elements";
+	import { browser, dev } from "$app/environment";
+	import { afterNavigate, beforeNavigate } from "$app/navigation";
+	import posthog from "posthog-js";
 
-	let { children }: ChildrenProps = $props();
-
-	inject({ mode: dev ? "development" : "production" });
+	let { children }: HTMLAttributes<HTMLDivElement> = $props();
 
 	let viewTransitionAPI = $state(false);
+
+	if (!dev && browser) {
+		beforeNavigate(() => posthog.capture("$pageleave"));
+		afterNavigate(() => posthog.capture("$pageview"));
+	}
 
 	if (typeof window !== "undefined") {
 		gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +48,7 @@
 888
 
 `,
-			"font-family:monospace; color: #e88274;"
+			"font-family:monospace; color: #f17f6f;"
 		);
 	});
 </script>
@@ -68,7 +72,7 @@
 	<meta name="url" content={page.url.href} />
 	<link rel="canonical" href={page.url.href} />
 
-	<meta name="generator" content="SvelteKit v2.5.26" />
+	<meta name="generator" content="SvelteKit v2.17.2" />
 </svelte:head>
 
 <ViewTransition />

@@ -6,12 +6,12 @@
 	import { buttonVariants } from "$lib/components/ui/button";
 	import CalendarDays from "lucide-svelte/icons/calendar-days";
 	import MessageSquareMore from "lucide-svelte/icons/message-square-more";
-	import type { IdProps } from "$lib/ts/types";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	let { id }: IdProps = $props();
+	let { id, ...restProps }: HTMLAttributes<HTMLElement> = $props();
 </script>
 
-<Section {id}>
+<Section {id} {...restProps}>
 	<div class="mx-auto max-w-2xl md:text-center">
 		<Headline2>Zeit für einen Kaffee?</Headline2>
 		<p class="mt-2.5 text-balance">

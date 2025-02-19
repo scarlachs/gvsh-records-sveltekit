@@ -18,14 +18,14 @@
 	<AccordionPrimitive.Trigger
 		bind:ref
 		class={cn(
-			"group flex flex-1 items-center justify-between rounded-md py-4 text-lg hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground motion-safe:transition-all",
+			"group focus-visible:ring-foreground flex flex-1 cursor-pointer items-center justify-between rounded-md py-4 text-lg hover:underline focus-visible:ring-2 focus-visible:outline-hidden motion-safe:transition-all",
 			className
 		)}
 		{...restProps}
 	>
 		{@render children?.()}
 		<ChevronDown
-			class="size-5 shrink-0 text-muted-foreground group-hover:text-foreground group-data-[state=open]:rotate-180 motion-safe:transition-transform motion-safe:duration-200"
+			class="text-muted-foreground group-hover:text-foreground size-5 shrink-0 group-data-[state=open]:rotate-180 motion-safe:transition-transform motion-safe:duration-200"
 		/>
 	</AccordionPrimitive.Trigger>
 </AccordionPrimitive.Header>

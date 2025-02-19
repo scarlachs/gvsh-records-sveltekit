@@ -4,9 +4,7 @@
 	import type { LogoProps } from "$lib/ts/types";
 
 	const id = `shadcn-${randomAlphaNumeric()}`;
-	let { wordmark, ...restProps }: LogoProps = $props();
-
-	type $$Props = SVGAttributes<SVGElement>;
+	let { wordmark = false, ...restProps }: LogoProps & SVGAttributes<SVGElement> = $props();
 </script>
 
 <div class="flex gap-2">
