@@ -23,6 +23,7 @@
 	--font-montserrat: "Montserrat Variable", var(--font-sans);
 
 	--animate-logo-rotate: logo-rotate 14s ease-in-out infinite;
+	--animate-logo-rotate-fun: logo-rotate-fun 6s ease-in-out infinite;
 
 	@keyframes logo-rotate {
 		0% {
@@ -33,6 +34,19 @@
 			rotate: 180deg;
 		}
 		57.15%,
+		100% {
+			rotate: 360deg;
+		}
+	}
+	@keyframes logo-rotate-fun {
+		0% {
+			rotate: 0;
+		}
+		16.67%,
+		50% {
+			rotate: 180deg;
+		}
+		66.67%,
 		100% {
 			rotate: 360deg;
 		}
