@@ -29,6 +29,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/website-talk",
+			"destination": "https://cal.com/pascalschaar/website-talk",
+			"permanent": true
+		},
+		{
 			"source": "/trustpilot",
 			"destination": "https://de.trustpilot.com/review/schaar.dev",
 			"permanent": true
