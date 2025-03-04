@@ -1,8 +1,10 @@
 <h1>Impressum</h1>
 
 <p>
-	Pascal Schaar<br />
-	Bornwiese 2<br />
+	Pascal Schaar
+	<br />
+	Bornwiese 2
+	<br />
 	21391 Reppenstedt
 </p>
 
@@ -13,8 +15,23 @@
 
 <h2>Umsatzsteuer-ID</h2>
 <p>
-	Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+	Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+	<br />
 	DE315467726
+</p>
+
+<h2>EU-Streitschlichtung</h2>
+<p>
+	Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a
+		href="https://ec.europa.eu/consumers/odr/"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		https://ec.europa.eu/consumers/odr/
+	</a>
+	.
+	<br />
+	Unsere E-Mail-Adresse finden Sie oben im Impressum.
 </p>
 
 <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
@@ -27,6 +44,8 @@
 	Quelle: <a
 		href="https://www.e-recht24.de/impressum-generator.html"
 		target="_blank"
-		rel="noopener">https://www.e-recht24.de/impressum-generator.html</a
+		rel="noopener noreferrer"
 	>
+		https://www.e-recht24.de/impressum-generator.html
+	</a>
 </p>
