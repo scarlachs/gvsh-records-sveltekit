@@ -32,7 +32,7 @@
 </script>
 
 <header
-	class="sticky top-0 z-50 overflow-clip border-b border-slate-900/10 backdrop-blur supports-backdrop-filter:bg-slate-100/60 dark:border-slate-50/10 dark:supports-backdrop-filter:bg-slate-950/60"
+	class="supports-backdrop-filter:bg-background/60 sticky top-0 z-50 overflow-clip border-b border-slate-900/10 backdrop-blur dark:border-slate-50/10"
 	bind:this={trigger}
 >
 	<div
