@@ -14,7 +14,7 @@
 				title: "Portfolio: Fotografie",
 				copy: "Eine Website, die meine Leidenschaft als Fotograf übersichtlich darstellt. Einfache Nutzerführung und ein exklusiver Model-Login.",
 				website: "https://www.pascalschaar.com",
-				usedStack: ["sveltekit", "typescript", "tailwindcss"]
+				usedStack: ["sveltekit", "typescript", "tailwindcss", "shadcn-svelte"]
 			},
 			image: {
 				file: PortfolioPhotography
