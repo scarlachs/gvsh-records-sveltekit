@@ -2,6 +2,8 @@ import type { Stack } from "$lib/ts/types";
 import { shuffleArray } from "$lib/ts/utils";
 import type { PageServerLoad } from "./$types";
 
+export const prerender = false;
+
 const items: Stack[] = [
 	"astro",
 	"bootstrap",
