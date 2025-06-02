@@ -13,9 +13,9 @@
 				hier eine Auswahl meiner bisherigen Projekte.
 			</p>
 			<ButtonGroup>
-				<a href="/#projects" class={buttonVariants({ variant: "default" })}
-					>Aktuelle Projekte</a
-				>
+				<a href="/#projects" class={buttonVariants({ variant: "default" })}>
+					Aktuelle Projekte
+				</a>
 				<a href="/#about" class={buttonVariants({ variant: "secondary" })}>Über mich</a>
 			</ButtonGroup>
 		</div>
