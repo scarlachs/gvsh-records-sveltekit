@@ -8,17 +8,17 @@
 @theme {
 	/* colors from https://uicolors.app/create */
 	/* and converted with https://oklch.com/ */
-	--color-primary-50: oklch(0.9739 0.0098 25.07); /* #fdf4f3 */
-	--color-primary-100: oklch(0.9427 0.0256 26.53); /* #fde6e3 */
+	--color-primary-50: oklch(0.9744 0.0111 31.07); /* #fef4f2 */
+	--color-primary-100: oklch(0.9446 0.0248 29.93); /* #fde7e3 */
 	--color-primary-200: oklch(0.898 0.0482 27.59); /* #fcd2cc */
-	--color-primary-300: oklch(0.8287 0.0824 28.22); /* #f8b3a9 */
-	--color-primary-400: oklch(0.721 0.1429 29.33); /* #f17f6f */
-	--color-primary-500: oklch(0.6554 0.1729 30.34); /* #e75f4c */
-	--color-primary-600: oklch(0.5871 0.186 30.94); /* #d4422e */
-	--color-primary-700: oklch(0.514 0.1644 31.24); /* #b23523 */
-	--color-primary-800: oklch(0.4528 0.1372 30.9); /* #932f21 */
-	--color-primary-900: oklch(0.4068 0.1101 30.59); /* #7a2d22 */
-	--color-primary-950: oklch(0.2648 0.0732 31.09); /* #42140d */
+	--color-primary-300: oklch(0.8295 0.0838 28.99); /* #f9b3a8 */
+	--color-primary-400: oklch(0.725 0.1444 30.23); /* #f3806e */
+	--color-primary-500: oklch(0.6595 0.1745 31.32); /* #e9604a */
+	--color-primary-600: oklch(0.5913 0.1875 31.67); /* #d6432c */
+	--color-primary-700: oklch(0.5173 0.1668 31.74); /* #b43521 */
+	--color-primary-800: oklch(0.4561 0.1398 31.61); /* #952f1f */
+	--color-primary-900: oklch(0.4086 0.114 31.03); /* #7c2c20 */
+	--color-primary-950: oklch(0.2651 0.0759 30.94); /* #43130c */
 
 	--font-montserrat: "Montserrat Variable", var(--font-sans);
 
