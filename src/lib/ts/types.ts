@@ -8,17 +8,13 @@ type TransitionProps = {
 	url: string;
 };
 
-type LogoProps = {
-	wordmark?: boolean;
-};
-
-export type Group<T> = {
+type Group<T> = {
 	key: string;
 	children?: Group<T>[];
 	items?: T[];
 };
 
-export type Record = {
+type Record = {
 	sex: string;
 	group: string;
 	class: string;
@@ -30,4 +26,4 @@ export type Record = {
 	club: string | null;
 };
 
-export type { ListItem, TransitionProps, LogoProps };
+export type { ListItem, TransitionProps, Group, Record };
