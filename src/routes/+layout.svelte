@@ -17,10 +17,10 @@
 
 	let viewTransitionAPI = $state(false);
 
-	// if (!dev && browser) {
-	// 	beforeNavigate(() => posthog.capture("$pageleave"));
-	// 	afterNavigate(() => posthog.capture("$pageview"));
-	// }
+	if (!dev && browser) {
+		beforeNavigate(() => posthog.capture("$pageleave"));
+		afterNavigate(() => posthog.capture("$pageview"));
+	}
 
 	onMount(() => {
 		// @ts-ignore
