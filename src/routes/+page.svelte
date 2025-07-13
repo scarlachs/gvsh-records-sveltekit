@@ -73,7 +73,9 @@
 							<Table.Root class="mt-1">
 								<!-- <Table.Caption>A list of your recent invoices.</Table.Caption> -->
 								<Table.Header>
-									<Table.Row class="grid grid-cols-[3fr_3fr_6fr_3fr_4fr_8fr]">
+									<Table.Row
+										class="grid grid-cols-[3fr_3fr_6fr_3fr_4fr_8fr] items-center"
+									>
 										<Table.Head>Klasse</Table.Head>
 										<Table.Head>Gewicht</Table.Head>
 										<Table.Head>Name</Table.Head>
