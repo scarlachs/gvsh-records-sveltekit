@@ -19,14 +19,14 @@
 		</a> -->
 
 		<div class="flex h-9 items-center space-x-2">
-			<nav class="flex items-center max-sm:hidden" aria-label="Hauptnavigation">
+			<nav class="flex items-center" aria-label="Hauptnavigation">
 				{#each ["Männer", "Frauen"] as item}
 					<a href="/#{item}" class={buttonVariants({ variant: "ghost" })}>
 						{item}
 					</a>
 				{/each}
 			</nav>
-			<Separator orientation="vertical" class="max-sm:hidden" />
+			<Separator orientation="vertical" />
 			<div class="flex items-center">
 				<SocialNav />
 				<ModeToggle />
