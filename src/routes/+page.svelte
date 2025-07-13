@@ -73,7 +73,7 @@
 							<Table.Root class="mt-1">
 								<!-- <Table.Caption>A list of your recent invoices.</Table.Caption> -->
 								<Table.Header>
-									<Table.Row>
+									<Table.Row class="grid grid-cols-[3fr_3fr_6fr_3fr_4fr_8fr]">
 										<Table.Head>Klasse</Table.Head>
 										<Table.Head>Gewicht</Table.Head>
 										<Table.Head>Name</Table.Head>
@@ -90,7 +90,7 @@
 											month: "2-digit",
 											day: "2-digit"
 										}}
-										<Table.Row>
+										<Table.Row class="grid grid-cols-[3fr_3fr_6fr_3fr_4fr_8fr]">
 											<Table.Cell>{item.class} kg</Table.Cell>
 											<Table.Cell>
 												{item.weight
