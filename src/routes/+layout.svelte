@@ -8,8 +8,6 @@
 	import { ModeWatcher } from "mode-watcher";
 	import Header from "$lib/components/Header.svelte";
 	import Footer from "$lib/components/Footer.svelte";
-	import gsap from "gsap";
-	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 	import type { HTMLAttributes } from "svelte/elements";
 	import { browser, dev } from "$app/environment";
 	import { afterNavigate, beforeNavigate } from "$app/navigation";
@@ -19,14 +17,10 @@
 
 	let viewTransitionAPI = $state(false);
 
-	if (!dev && browser) {
-		beforeNavigate(() => posthog.capture("$pageleave"));
-		afterNavigate(() => posthog.capture("$pageview"));
-	}
-
-	if (typeof window !== "undefined") {
-		gsap.registerPlugin(ScrollTrigger);
-	}
+	// if (!dev && browser) {
+	// 	beforeNavigate(() => posthog.capture("$pageleave"));
+	// 	afterNavigate(() => posthog.capture("$pageview"));
+	// }
 
 	onMount(() => {
 		// @ts-ignore
@@ -55,9 +49,9 @@
 
 <svelte:head>
 	{#if page.data.title}
-		<meta name="title" content="{page.data.title} | Pascal Schaar" />
-		<title>{page.data.title} | Pascal Schaar</title>
-		<meta property="og:title" content="{page.data.title} | Pascal Schaar" />
+		<meta name="title" content={page.data.title} />
+		<title>{page.data.title}</title>
+		<meta property="og:title" content={page.data.title} />
 	{/if}
 
 	{#if page.data.description}
@@ -70,9 +64,9 @@
 	<meta property="og:locale" content="de_DE" />
 
 	<meta name="url" content={page.url.href} />
-	<link rel="canonical" href={page.url.href} />
+	<link rel="canonical" href="{page.url.origin}{page.url.pathname}" />
 
-	<meta name="generator" content="SvelteKit v2.17.2" />
+	<meta name="generator" content="SvelteKit v2.19.0" />
 </svelte:head>
 
 <ViewTransition />

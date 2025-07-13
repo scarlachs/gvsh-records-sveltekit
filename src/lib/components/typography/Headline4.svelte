@@ -5,6 +5,6 @@
 	let { class: className, children, ...restProps }: HTMLAttributes<HTMLHeadingElement> = $props();
 </script>
 
-<h2 class={cn("text-2xl font-bold md:text-3xl", className)} {...restProps}>
+<h3 class={cn("text-lg font-bold md:text-xl", className)} {...restProps}>
 	{@render children?.()}
-</h2>
+</h3>

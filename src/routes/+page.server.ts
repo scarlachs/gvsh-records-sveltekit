@@ -1,38 +1,11 @@
-import type { Stack } from "$lib/ts/types";
-import { shuffleArray } from "$lib/ts/utils";
 import type { PageServerLoad } from "./$types";
 
-export const prerender = false;
+export const prerender = true;
 
-const items: Stack[] = [
-	"astro",
-	"bootstrap",
-	"css",
-	"gsap",
-	"html",
-	"javascript",
-	"nextjs",
-	"react",
-	"scss",
-	"shadcn",
-	"storyblok",
-	"sveltekit",
-	"tailwindcss",
-	"typescript",
-	"typo3"
-];
-
-export const load = (async ({ setHeaders }) => {
-	setHeaders({
-		"cache-control": "no-store"
-	});
-
-	const shuffledItems = shuffleArray(items);
-
+export const load = (async () => {
 	return {
-		title: "Frontend Entwickler",
+		title: "GVSH Rekorde Kraftdreikampf",
 		description:
-			"Ich bin Frontend-Entwickler und zeige hier eine Auswahl meiner bisherigen Projekte. ⇒ Jetzt dein Projekt anfragen.",
-		items: shuffledItems
+			"Hier findest du eine Liste aller Kraftdreikampf-Rekore im Gewichtheber-Verband Schleswig-Holstein von 1982 e.V."
 	};
 }) satisfies PageServerLoad;

@@ -3,55 +3,26 @@
 	import ModeToggle from "$lib/components/ModeToggle.svelte";
 	import SocialNav from "$lib/components/SocialNav.svelte";
 	import Separator from "$lib/components/ui/separator/separator.svelte";
-	import { onMount } from "svelte";
-	import { animateFadeIn } from "$lib/ts/utils";
-	import type { ListItem } from "$lib/ts/types";
 	import { buttonVariants } from "$lib/components/ui/button";
-
-	const items: ListItem[] = [
-		{
-			label: "Projekte",
-			link: "projects"
-		},
-		{
-			label: "Über mich",
-			link: "about"
-		},
-		{
-			label: "Kontakt",
-			link: "contact"
-		}
-	];
-
-	let trigger: HTMLElement;
-	let target: HTMLElement;
-
-	onMount(() => {
-		animateFadeIn(trigger, target);
-	});
 </script>
 
 <header
 	class="supports-backdrop-filter:bg-background/60 sticky top-0 z-50 overflow-clip border-b border-slate-900/10 backdrop-blur dark:border-slate-50/10"
-	bind:this={trigger}
 >
-	<div
-		class="container flex items-center justify-between py-2 motion-safe:-translate-y-full motion-safe:opacity-0"
-		bind:this={target}
-	>
-		<a
+	<div class="container flex items-center justify-end py-2">
+		<!-- <a
 			class="focus-visible:ring-foreground focus-visible:ring-offset-background h-11 rounded-md focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:outline-none"
 			href="/"
 		>
-			<PascalLogo class="motion-safe:animate-logo-rotate inline-flex h-full w-auto" />
+			<PascalLogo class="inline-flex h-full w-auto" />
 			<span class="sr-only">Pascal</span>
-		</a>
+		</a> -->
 
 		<div class="flex h-9 items-center space-x-2">
 			<nav class="flex items-center max-sm:hidden" aria-label="Hauptnavigation">
-				{#each items as item}
-					<a href="/#{item.link}" class={buttonVariants({ variant: "ghost" })}>
-						{item.label}
+				{#each ["Männer", "Frauen"] as item}
+					<a href="/#{item}" class={buttonVariants({ variant: "ghost" })}>
+						{item}
 					</a>
 				{/each}
 			</nav>

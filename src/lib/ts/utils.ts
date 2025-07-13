@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import gsap from "gsap";
+import type { Group } from "./types";
 
 export const cn = (...inputs: ClassValue[]) => {
 	return twMerge(clsx(inputs));
@@ -17,21 +17,31 @@ export const randomAlphaNumeric = (length: number = 14) => {
 	return result;
 };
 
-export const animateFadeIn = (trigger: HTMLElement, target?: HTMLElement) => {
-	gsap.to(target ? target : trigger, {
-		scrollTrigger: trigger,
-		opacity: 1,
-		translateY: 0,
-		translateX: 0,
-		duration: 0.6
-	});
-};
+export function groupByToArray<T>(array: T[], key: keyof T): Group<T>[] {
+	const map = new Map<string, T[]>();
 
-export const shuffleArray = (array: any[]) => {
-	let shuffled = [...array];
-	for (let i = shuffled.length - 1; i > 0; i--) {
-		let j = Math.floor(Math.random() * (i + 1));
-		[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+	for (const item of array) {
+		const k = String(item[key]);
+		if (!map.has(k)) map.set(k, []);
+		map.get(k)!.push(item);
 	}
-	return shuffled;
-};
+
+	return Array.from(map.entries()).map(([groupKey, groupItems]) => ({
+		key: groupKey,
+		items: groupItems
+	}));
+}
+
+export function groupByMultipleToArray<T>(array: T[], keys: (keyof T)[]): Group<T>[] {
+	if (keys.length === 0) return [];
+
+	const [firstKey, ...restKeys] = keys;
+
+	const grouped = groupByToArray(array, firstKey);
+
+	return grouped.map((group) => ({
+		key: group.key,
+		children: restKeys.length ? groupByMultipleToArray(group.items!, restKeys) : undefined,
+		items: restKeys.length === 0 ? group.items : undefined
+	}));
+}

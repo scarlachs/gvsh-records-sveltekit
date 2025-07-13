@@ -4,43 +4,13 @@
 	},
 	"redirects": [
 		{
-			"source": "/linkedin",
-			"destination": "https://www.linkedin.com/in/pascalschaar/",
+			"source": "/impressum",
+			"destination": "https://www.schaar.dev/impressum",
 			"permanent": true
 		},
 		{
-			"source": "/github",
-			"destination": "https://github.com/scarlachs",
-			"permanent": true
-		},
-		{
-			"source": "/whatsapp",
-			"destination": "https://wa.me/message/BY4II5TIXXW6N1",
-			"permanent": true
-		},
-		{
-			"source": "/photos",
-			"destination": "https://pascal.photos",
-			"permanent": true
-		},
-		{
-			"source": "/coffee",
-			"destination": "https://cal.com/pascalschaar/coffee",
-			"permanent": true
-		},
-		{
-			"source": "/website-talk",
-			"destination": "https://cal.com/pascalschaar/website-talk",
-			"permanent": true
-		},
-		{
-			"source": "/trustpilot",
-			"destination": "https://de.trustpilot.com/review/schaar.dev",
-			"permanent": true
-		},
-		{
-			"source": "/google",
-			"destination": "https://g.page/r/CROuaIW3df7hEBM/review",
+			"source": "/datenschutz",
+			"destination": "https://www.schaar.dev/datenschutz",
 			"permanent": true
 		}
 	]

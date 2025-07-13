@@ -1,8 +1,8 @@
 <script lang="ts">
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 	import { buttonVariants } from "$lib/components/ui/button/index.js";
-	import Sun from "lucide-svelte/icons/sun";
-	import Moon from "lucide-svelte/icons/moon";
+	import Sun from "@lucide/svelte/icons/sun";
+	import Moon from "@lucide/svelte/icons/moon";
 	import { resetMode, setMode } from "mode-watcher";
 </script>
 
