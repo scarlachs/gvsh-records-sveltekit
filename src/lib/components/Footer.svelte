@@ -25,7 +25,12 @@
 	>
 		<p>
 			Copyright &copy; {new Date().getFullYear()}
-			<a href="https://www.schaar.dev" class="underline hover:no-underline">Pascal Schaar</a>
+			<a
+				href="https://www.schaar.dev"
+				class="underline underline-offset-4 hover:no-underline"
+			>
+				Pascal Schaar
+			</a>
 		</p>
 		<div class="flex items-center gap-4 max-md:flex-col md:h-9 md:gap-2">
 			<SocialNav />
