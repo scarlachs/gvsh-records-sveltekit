@@ -6,17 +6,6 @@ export const cn = (...inputs: ClassValue[]) => {
 	return twMerge(clsx(inputs));
 };
 
-export const randomAlphaNumeric = (length: number = 14) => {
-	const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	let result = "";
-
-	Array.from({ length }).forEach(() => {
-		result += chars[Math.floor(Math.random() * chars.length)];
-	});
-
-	return result;
-};
-
 export function groupByToArray<T>(array: T[], key: keyof T): Group<T>[] {
 	const map = new Map<string, T[]>();
 
