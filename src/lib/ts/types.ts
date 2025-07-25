@@ -21,9 +21,11 @@ type Record = {
 	discipline: string;
 	weight: number | null;
 	name: string | null;
+	club: string | null;
 	date: string | null;
 	location: string | null;
-	club: string | null;
+	event?: string | null;
+	equipment?: string | null;
 };
 
 export type { ListItem, TransitionProps, Group, Record };

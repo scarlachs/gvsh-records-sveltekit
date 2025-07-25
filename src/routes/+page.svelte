@@ -25,9 +25,11 @@
 		class: "Gewichtsklasse",
 		discipline: "Disziplin",
 		name: "Name",
+		club: "Verein",
 		year: "Jahr",
 		location: "Ort",
-		club: "Verein"
+		event: "Veranstaltung",
+		equipment: "Ausrüstung"
 	};
 
 	const uniqueValues = {
@@ -36,13 +38,15 @@
 		class: [...new Set(records.map((r) => r.class))]
 			.filter(Boolean)
 			.sort((a, b) => Number(b) - Number(a)),
-		discipline: [...new Set(records.map((r) => r.discipline))],
+		discipline: [...new Set(records.map((r) => r.discipline))].filter(Boolean),
 		name: [...new Set(records.map((r) => r.name))].filter(Boolean).sort(),
+		club: [...new Set(records.map((r) => r.club))].filter(Boolean).sort(),
 		year: [...new Set(records.map((r) => (r.date ? new Date(r.date).getFullYear() : null)))]
 			.filter(Boolean)
 			.sort((a, b) => Number(b) - Number(a)),
 		location: [...new Set(records.map((r) => r.location))].filter(Boolean).sort(),
-		club: [...new Set(records.map((r) => r.club))].filter(Boolean).sort()
+		event: [...new Set(records.map((r) => r.event))].filter(Boolean).sort(),
+		equipment: [...new Set(records.map((r) => r.equipment))].filter(Boolean)
 	};
 
 	let activeFilters: Record<keyof typeof uniqueValues, string[]> = $state({
@@ -51,9 +55,11 @@
 		class: [],
 		discipline: [],
 		name: [],
+		club: [],
 		year: [],
 		location: [],
-		club: []
+		event: [],
+		equipment: []
 	});
 
 	const filteredRecords = $derived(
@@ -72,7 +78,7 @@
 	);
 
 	const groups = $derived(
-		groupByMultipleToArray(filteredRecords, ["sex", "group", "discipline"])
+		groupByMultipleToArray(filteredRecords, ["equipment", "sex", "group", "discipline"])
 	);
 
 	const addFilter = (category: keyof typeof uniqueValues, value: string): void => {
@@ -122,7 +128,7 @@
 			<RotateCcw />
 		</Button>
 	</Headline2>
-	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
 		{#each Object.entries(uniqueValues) as [category, values], i}
 			<Popover.Root>
 				<Popover.Trigger class={[buttonVariants({ variant: "outline" }), "justify-start"]}>
@@ -184,92 +190,118 @@
 
 <Section>
 	{#if groups.length > 0}
-		{#each groups as { key: sex, children: ageGroups }}
-			<Headline2 class="bg-background group/h2 flex scroll-mt-20 items-center gap-2" id={sex}>
-				{sex}
-				<a class="hidden group-hover/h2:block" href="/#{sex}">
-					<Link
-						class="size-5 text-stone-700 hover:text-stone-950 dark:text-stone-300 dark:hover:text-stone-50"
-					/>
-				</a>
-			</Headline2>
-
-			{#if ageGroups}
-				{#each ageGroups as { key: age, children: classGroups }}
-					<Headline3
-						class="bg-background group/h3 mt-8 flex scroll-mt-20 items-center gap-2"
-						id="{sex}-{age}"
+		{#each groups as { key: equipment, children: eqGroups }}
+			{#if equipment !== "null" && eqGroups}
+				{#each eqGroups as { key: sex, children: ageGroups }}
+					<Headline2
+						class="bg-background group/h2 mt-20 flex scroll-mt-20 items-center gap-2 md:mt-28 [&+h3]:mt-8!"
+						id="{equipment}-{sex}"
 					>
-						{age}
-						<a class="hidden group-hover/h3:block" href="/#{sex}-{age}">
+						{sex}
+						{equipment}
+						<a class="hidden group-hover/h2:block" href="/#{equipment}-{sex}">
 							<Link
 								class="size-5 text-stone-700 hover:text-stone-950 dark:text-stone-300 dark:hover:text-stone-50"
 							/>
 						</a>
-					</Headline3>
+					</Headline2>
 
-					{#if classGroups}
-						{#each classGroups as { key: discipline, items: classGroup }}
-							<Headline4
-								class="bg-background group/h4 mt-4 flex scroll-mt-20 items-center gap-2"
-								id="{sex}-{age}-{discipline}"
+					{#if ageGroups}
+						{#each ageGroups as { key: age, children: classGroups }}
+							<Headline3
+								class="bg-background group/h3 mt-20 flex scroll-mt-20 items-center gap-2"
+								id="{equipment}-{sex}-{age}"
 							>
-								{discipline}
+								{age}
+								{sex}
+								{equipment}
 								<a
-									class="hidden group-hover/h4:block"
-									href="/#{sex}-{age}-{discipline}"
+									class="hidden group-hover/h3:block"
+									href="/#{equipment}-{sex}-{age}"
 								>
 									<Link
 										class="size-5 text-stone-700 hover:text-stone-950 dark:text-stone-300 dark:hover:text-stone-50"
 									/>
 								</a>
-							</Headline4>
+							</Headline3>
 
-							{#if classGroup}
-								<Table.Root class="mt-1">
-									<Table.Header>
-										<Table.Row class="">
-											<Table.Head>Klasse</Table.Head>
-											<Table.Head>Gewicht</Table.Head>
-											<Table.Head>Name</Table.Head>
-											<Table.Head>Datum</Table.Head>
-											<Table.Head>Ort</Table.Head>
-											<Table.Head>Verein</Table.Head>
-										</Table.Row>
-									</Table.Header>
-									<Table.Body>
-										{#each classGroup as item}
-											{@const date = item.date ? new Date(item.date) : null}
-											{@const options: Intl.DateTimeFormatOptions = {
+							{#if classGroups}
+								{#each classGroups as { key: discipline, items: classGroup }}
+									<Headline4
+										class="bg-background group/h4 mt-8 flex scroll-mt-20 items-center gap-2"
+										id="{equipment}-{sex}-{age}-{discipline}"
+									>
+										{discipline}
+										<a
+											class="hidden group-hover/h4:block"
+											href="/#{equipment}-{sex}-{age}-{discipline}"
+										>
+											<Link
+												class="size-5 text-stone-700 hover:text-stone-950 dark:text-stone-300 dark:hover:text-stone-50"
+											/>
+										</a>
+									</Headline4>
+
+									{#if classGroup}
+										<Table.Root class="mt-1">
+											<Table.Header>
+												<Table.Row class="">
+													<Table.Head>Klasse</Table.Head>
+													<Table.Head>Gewicht</Table.Head>
+													<Table.Head>{n18.name}</Table.Head>
+													<Table.Head>{n18.club}</Table.Head>
+													<Table.Head>Datum</Table.Head>
+													<Table.Head>{n18.location}</Table.Head>
+													<Table.Head>{n18.event}</Table.Head>
+													<Table.Head>{n18.equipment}</Table.Head>
+												</Table.Row>
+											</Table.Header>
+											<Table.Body>
+												{#each classGroup as item}
+													{@const date = item.date
+														? new Date(item.date)
+														: null}
+													{@const options: Intl.DateTimeFormatOptions = {
 											year: "numeric",
 											month: "2-digit",
 											day: "2-digit"
 										}}
-											<Table.Row class="">
-												<Table.Cell>{item.class} kg</Table.Cell>
-												<Table.Cell>
-													{item.weight
-														? `${item.weight?.toString().replaceAll(".", ",")} kg`
-														: "-"}
-												</Table.Cell>
-												<Table.Cell>
-													{item.name ? item.name : "-"}
-												</Table.Cell>
-												<Table.Cell>
-													{date
-														? date.toLocaleDateString("de-DE", options)
-														: "-"}
-												</Table.Cell>
-												<Table.Cell>
-													{item.location ? item.location : "-"}
-												</Table.Cell>
-												<Table.Cell>
-													{item.club ? item.club : "-"}
-												</Table.Cell>
-											</Table.Row>
-										{/each}
-									</Table.Body>
-								</Table.Root>
+													<Table.Row class="">
+														<Table.Cell>{item.class} kg</Table.Cell>
+														<Table.Cell>
+															{item.weight
+																? `${item.weight?.toString().replaceAll(".", ",")} kg`
+																: "-"}
+														</Table.Cell>
+														<Table.Cell>
+															{item.name ? item.name : "-"}
+														</Table.Cell>
+														<Table.Cell>
+															{item.club ? item.club : "-"}
+														</Table.Cell>
+														<Table.Cell>
+															{date
+																? date.toLocaleDateString(
+																		"de-DE",
+																		options
+																	)
+																: "-"}
+														</Table.Cell>
+														<Table.Cell>
+															{item.location ? item.location : "-"}
+														</Table.Cell>
+														<Table.Cell>
+															{item.event ? item.event : "-"}
+														</Table.Cell>
+														<Table.Cell>
+															{item.equipment ? item.equipment : "-"}
+														</Table.Cell>
+													</Table.Row>
+												{/each}
+											</Table.Body>
+										</Table.Root>
+									{/if}
+								{/each}
 							{/if}
 						{/each}
 					{/if}
