@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/ts/utils.js";
+	import { type WithElementRef } from "bits-ui";
+	import { cn } from "$lib/ts/utils.js";
 	import type { HTMLTdAttributes } from "svelte/elements";
 
 	let {
@@ -14,7 +15,7 @@
 	bind:this={ref}
 	data-slot="table-cell"
 	class={cn(
-		"whitespace-nowrap bg-clip-padding p-2 align-middle [&:has([role=checkbox])]:pr-0",
+		"bg-clip-padding p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0",
 		className
 	)}
 	{...restProps}
