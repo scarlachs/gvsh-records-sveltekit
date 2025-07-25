@@ -10,14 +10,14 @@
 >
 	<div class="container flex items-center justify-end py-2">
 		<div class="flex h-9 items-center space-x-2">
-			<nav class="flex items-center" aria-label="Hauptnavigation">
-				{#each ["Männer", "Frauen"] as item}
-					<a href="/#{item}" class={buttonVariants({ variant: "ghost" })}>
-						{item}
+			<nav class="flex items-center max-sm:hidden" aria-label="Hauptnavigation">
+				{#each [{ label: "Männer Classic", href: "Classic-Männer" }, { label: "Frauen Classic", href: "Classic-Frauen" }] as { label, href }}
+					<a href="/#{href}" class={buttonVariants({ variant: "ghost" })}>
+						{label}
 					</a>
 				{/each}
 			</nav>
-			<Separator orientation="vertical" />
+			<Separator orientation="vertical" class="max-sm:hidden" />
 			<div class="flex items-center">
 				<SocialNav />
 				<ModeToggle />
