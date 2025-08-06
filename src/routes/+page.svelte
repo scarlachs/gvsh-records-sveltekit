@@ -104,11 +104,20 @@
 	<div class="prose prose-stone dark:prose-invert">
 		<p>Es zählen nur angemeldete Rekordversuche auf einer LM. DM Versuche zählen immer.</p>
 		<p>
-			Diese Liste entstand privat und nicht im Auftrag vom GVSH. Diese Website steht in keinem
-			Zusammenhang zum GVSH.
+			Diese Liste entstand privat und nicht im Auftrag des GVSH oder BVDK. Diese Website steht
+			in keinem Zusammenhang zum GVSH oder BVDK.
 		</p>
 		<p>Großen Dank an Peter Svend Guhlke für die Bereitstellung dieser Daten.</p>
 	</div>
+	<Button
+		class="mt-12"
+		href="https://bvdk.de/rekorde/lv/9?gender=male"
+		target="_blank"
+		rel="nofollow noopener"
+		variant="secondary"
+	>
+		Zur BVDK Rekordliste
+	</Button>
 </Section>
 
 <Section>
